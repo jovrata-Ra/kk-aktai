@@ -1,0 +1,1752 @@
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vitaresta KK aktai</title>
+<meta name="description" content="Vitarestos valymo kokybės patikros aktai pagal LST EN 13549.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#ffffff">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="KK aktai">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#f2f5f3; --surface:#ffffff; --surface-2:#e9efeb;
+  --ink:#15201c; --muted:#5c6b65; --faint:#8b9a94;
+  --line:#d5ded9; --line-strong:#b9c6c0;
+  --ok:#0f6b4f; --ok-soft:#dcefe6;
+  --bad:#a8321c; --bad-soft:#f7e2dd;
+  --focus:#0f6b4f;
+  --shadow:0 1px 2px rgba(21,32,28,.06),0 8px 24px rgba(21,32,28,.05);
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#111815; --surface:#1a221f; --surface-2:#222c28;
+    --ink:#e4ece8; --muted:#9aa8a2; --faint:#74827c;
+    --line:#2b3733; --line-strong:#3b4a44;
+    --ok:#4fd1a0; --ok-soft:#173229;
+    --bad:#ff8163; --bad-soft:#3a2019;
+    --focus:#4fd1a0;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#111815; --surface:#1a221f; --surface-2:#222c28;
+  --ink:#e4ece8; --muted:#9aa8a2; --faint:#74827c;
+  --line:#2b3733; --line-strong:#3b4a44;
+  --ok:#4fd1a0; --ok-soft:#173229;
+  --bad:#ff8163; --bad-soft:#3a2019;
+  --focus:#4fd1a0;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.45;-webkit-text-size-adjust:100%}
+.wrap{max-width:560px;margin:0 auto;padding:0 14px}
+
+.topbar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:12px;min-height:56px}
+.brandmark{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ok);white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.topmeta{margin-left:auto;display:flex;align-items:baseline;gap:13px;font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums}
+.topmeta b{font-weight:600}
+.topmeta .lab{color:var(--faint);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;display:block;line-height:1.2}
+.progressline{height:3px;background:var(--surface-2)}
+.progressline i{display:block;height:100%;background:var(--ok);width:0;transition:width .25s ease}
+.btn-mini{font-family:var(--sans);font-size:12px;font-weight:600;background:var(--surface);color:var(--muted);border:1px solid var(--line-strong);border-radius:6px;padding:5px 9px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;flex:none}
+
+main{padding:18px 0 118px}
+h1{font-size:23px;line-height:1.2;margin:0 0 4px;font-weight:600;text-wrap:balance}
+.lede{color:var(--muted);font-size:14px;margin:0 0 20px;max-width:52ch}
+.eyebrow{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--faint)}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);overflow:hidden}
+.panel + .panel{margin-top:14px}
+.panel-head{padding:11px 14px;border-bottom:1px solid var(--line);background:var(--surface-2);display:flex;align-items:center;gap:10px}
+.panel-body{padding:14px}
+.ctx{padding:9px 14px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted);line-height:1.45;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.ctx span{white-space:nowrap}
+.ctx .who{color:var(--ink);font-weight:600}
+.ctx .when{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.ctx .miss{color:var(--bad);font-weight:600}
+
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.field:last-child{margin-bottom:0}
+.field > label{font-size:12.5px;font-weight:600;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid-tv{display:grid;grid-template-columns:88px 1fr;gap:12px}
+input[type=text],input[type=date],textarea{font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line-strong);border-radius:7px;padding:10px 11px;width:100%}
+input[type=text].num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+textarea{resize:vertical;min-height:60px;line-height:1.4}
+input:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px solid var(--focus);outline-offset:1px}
+.hint{font-size:12px;color:var(--faint);line-height:1.4}
+.hint.warn{color:var(--bad)}
+
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font-family:var(--mono);font-size:14px;font-weight:500;background:var(--surface);color:var(--muted);border:1px solid var(--line-strong);border-radius:7px;padding:9px 13px;cursor:pointer;min-width:44px}
+.seg button[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:var(--surface);font-weight:600}
+.seg.wide button{font-family:var(--sans);flex:1}
+.seg.tight button{padding:7px 10px;min-width:38px;font-size:13px}
+
+.grp{border-top:1px solid var(--line)}
+.grp:first-of-type{border-top:0}
+.grp-title{padding:10px 14px 7px;background:var(--surface-2);font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+.row{display:flex;align-items:center;gap:10px;padding:5px 14px;border-top:1px solid var(--line);min-height:52px}
+.grp-title + .row{border-top:0}
+.row-name{flex:1;font-size:14.5px;line-height:1.3;min-width:0}
+.tri{display:flex;flex:none}
+.tri button{width:42px;height:38px;border:1px solid var(--line-strong);background:var(--surface);color:var(--faint);font-size:17px;font-weight:600;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.tri button:first-child{border-radius:7px 0 0 7px}
+.tri button:last-child{border-radius:0 7px 7px 0}
+.tri button + button{margin-left:-1px}
+.tri button[aria-pressed="true"]{z-index:1}
+.tri button.t1[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.tri button.t0[aria-pressed="true"]{background:var(--bad);border-color:var(--bad);color:var(--surface)}
+.tri button.tn[aria-pressed="true"]{background:var(--line-strong);border-color:var(--line-strong);color:var(--ink)}
+.row.is-bad{background:var(--bad-soft)}
+.detail{padding:0 14px 12px;display:flex;flex-direction:column;gap:9px}
+.detail input{font-size:15px;padding:8px 10px}
+
+/* foto */
+.fotorow{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.btn-foto{font-family:var(--sans);font-size:13px;font-weight:600;background:var(--surface);color:var(--ink);border:1px solid var(--line-strong);border-radius:7px;padding:8px 13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.btn-foto:disabled{opacity:.5;cursor:default}
+.thumbs{display:flex;gap:7px;flex-wrap:wrap}
+.thumb{position:relative;width:64px;height:64px;border-radius:7px;overflow:hidden;border:1px solid var(--line-strong);background:var(--surface-2);flex:none}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb button{position:absolute;top:2px;right:2px;width:20px;height:20px;border-radius:50%;border:0;background:rgba(0,0,0,.62);color:#fff;font-size:12px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.fotocount{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+.klbox{display:flex;align-items:center;gap:16px;padding:14px;border-top:1px solid var(--line);background:var(--surface-2)}
+.klnum{font-family:var(--mono);font-size:32px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.klnum small{font-size:14px;font-weight:500;color:var(--muted);margin-left:2px}
+.klside{font-size:12.5px;color:var(--muted);line-height:1.35}
+.verdict{margin-left:auto;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border-radius:20px;white-space:nowrap;flex:none}
+.verdict.pass{background:var(--ok-soft);color:var(--ok)}
+.verdict.fail{background:var(--bad-soft);color:var(--bad)}
+
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.stat{background:var(--surface);padding:13px 14px}
+.stat .lab{font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint)}
+.stat .val{font-family:var(--mono);font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2;margin-top:2px}
+.stat .sub{font-size:12px;color:var(--muted)}
+.final{padding:15px 14px;border-top:1px solid var(--line);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.final-txt{font-size:14px;line-height:1.4;flex:1;min-width:180px}
+
+/* skaiciu lenteles */
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th,.tbl td{padding:8px 14px;text-align:left;border-top:1px solid var(--line)}
+.tbl thead th{border-top:0;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.tbl td.n,.tbl th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl td.n.bad{color:var(--bad);font-weight:600}
+.bar{height:5px;border-radius:3px;background:var(--surface-2);overflow:hidden;margin-top:5px}
+.bar i{display:block;height:100%;background:var(--ok)}
+.bar i.low{background:var(--bad)}
+
+.tvlist{list-style:none;margin:0;padding:0}
+.tvlist li{display:flex;align-items:center;gap:9px;padding:9px 14px;border-top:1px solid var(--line);font-size:14px}
+.tvlist li:first-child{border-top:0}
+.tvlist .idx{font-family:var(--mono);font-size:11.5px;color:var(--faint);width:24px;flex:none}
+.tvlist .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tvlist .kl{font-family:var(--mono);font-size:12.5px;font-variant-numeric:tabular-nums;flex:none}
+.tvlist .kl.bad{color:var(--bad);font-weight:600}
+.tvlist .jump{background:none;border:1px solid var(--line-strong);border-radius:6px;color:var(--muted);font-size:12px;padding:4px 8px;cursor:pointer;flex:none;font-family:var(--sans)}
+.nkt{padding:11px 14px;font-size:13.5px;line-height:1.5;color:var(--muted);border-top:1px solid var(--line)}
+.nkt b{color:var(--ink);font-weight:600;display:block;margin-bottom:2px}
+.nkt .thumbs{margin-top:7px}
+
+.btn{font-family:var(--sans);font-size:15px;font-weight:600;border-radius:8px;padding:12px 18px;cursor:pointer;border:1px solid transparent}
+.btn-primary{background:var(--ok);color:var(--surface);border-color:var(--ok)}
+.btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--line-strong)}
+.btn-block{display:block;width:100%}
+.btn:disabled{opacity:.45;cursor:default}
+
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+.nav .wrap{display:flex;align-items:center;gap:8px;padding-top:9px;padding-bottom:9px}
+.nav .btn{flex:none;padding:12px 15px}
+.nav .grow{flex:1}
+.navlabel{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums}
+.navlabel b{display:block;font-size:14px;color:var(--ink);font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.syncrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:13px 14px;border-top:1px solid var(--line)}
+.syncrow:first-child{border-top:0}
+.syncmsg{font-size:12.5px;color:var(--muted);flex:1;min-width:150px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--faint);display:inline-block;margin-right:6px;vertical-align:1px}
+.dot.on{background:var(--ok)}
+.sp{background:var(--ok-soft)}
+.sp .syncmsg{color:var(--ink)}
+.sp-title{display:block;font-size:14.5px;margin-bottom:2px}
+#sp-msg.warn{color:var(--bad);font-weight:600}
+.sp-kelias{margin:7px 0 0;padding-left:18px;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.sp-kelias b{color:var(--ink);font-weight:600}
+
+/* spausdinimo maketas */
+#print{display:none}
+@media print{
+  body > *{display:none!important}
+  #print{display:block!important}
+  body{background:#fff;color:#000;font-family:var(--sans);font-size:10pt;line-height:1.35}
+  #print h1{font-size:13pt;margin:0 0 5mm;text-align:center;line-height:1.3}
+  #print h2{font-size:10.5pt;margin:7mm 0 2mm;padding-bottom:1mm;border-bottom:1px solid #000}
+  #print table{width:100%;border-collapse:collapse;font-size:9pt;margin:0}
+  #print th,#print td{border:1px solid #8a8a8a;padding:1.3mm 2mm;text-align:left;vertical-align:top}
+  #print th{background:#e8e8e8;font-weight:600}
+  #print td.n,#print th.n{text-align:right;white-space:nowrap}
+  #print table.meta td:first-child{width:44%;font-weight:600}
+  #print .isvada{margin:4mm 0 0;padding:2.5mm 3mm;border:1.5px solid #000;font-weight:600}
+  #print .nkt{page-break-inside:avoid;margin:0 0 4mm;padding-bottom:2mm;border-bottom:1px dotted #8a8a8a}
+  #print .nkt b{display:block;margin-bottom:1mm}
+  #print .nkt ul{margin:0 0 1.5mm;padding-left:5mm}
+  #print .fotos{display:flex;flex-wrap:wrap;gap:3mm;margin-top:2mm}
+  #print .fotos figure{margin:0;width:56mm}
+  #print .fotos img{width:56mm;height:auto;border:1px solid #8a8a8a;display:block}
+  #print .fotos figcaption{font-size:7.5pt;color:#333;margin-top:.8mm}
+  #print .parasai{margin-top:12mm;display:flex;gap:14mm;page-break-inside:avoid}
+  #print .parasai div{flex:1;border-top:1px solid #000;padding-top:1.5mm;font-size:8.5pt}
+  #print .kojene{margin-top:6mm;font-size:7.5pt;color:#444}
+  #print tr{page-break-inside:avoid}
+  #print h2{page-break-after:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:440px){
+  .bm-std{display:none}
+}
+@media (max-width:400px){
+  .btn-mini .lbl{display:none}
+  .grid2{grid-template-columns:1fr}
+  .tri button{width:38px}
+  .row-name{font-size:14px}
+  .tbl th,.tbl td{padding:8px 10px}
+}
+</style>
+
+<header class="topbar">
+  <div class="wrap">
+    <span class="brandmark">Vitaresta<span class="bm-std"> &#183; LST EN 13549</span></span>
+    <button type="button" class="btn-mini" id="btn-logout" hidden title="Baigti seans&#261;, kit&#261; kart&#261; reik&#279;s kodo"><span aria-hidden="true">&#8617;</span><span class="lbl">Atsijungti</span></button>
+    <button type="button" class="btn-mini" id="btn-setup" hidden title="Objektas, imtis, Ac/Re"><span aria-hidden="true">&#9881;</span><span class="lbl">Nustatymai</span></button>
+    <div class="topmeta" id="topmeta" hidden>
+      <span><span class="lab">TV</span><b id="m-tv">&#8212;</b></span>
+      <span><span class="lab">EVQ</span><b id="m-evq">&#8212;</b></span>
+      <span><span class="lab">Neat.</span><b id="m-bad">&#8212;</b></span>
+      <span><span class="lab">Foto</span><b id="m-foto">0</b></span>
+    </div>
+  </div>
+  <div class="progressline"><i id="prog"></i></div>
+</header>
+
+<main><div class="wrap">
+
+<!-- ============ LOGIN ============ -->
+<section id="scr-login">
+  <h1>Prisijungimas</h1>
+  <p class="lede">Programel&#279; naudoja Vitarestos komanda. &#302;vesk bendr&#261; prieigos kod&#261; ir savo vard&#261;.</p>
+
+  <div class="panel">
+    <div class="panel-body">
+      <div class="field" id="f-vardai-wrap" hidden>
+        <label>Prisijungei anks&#269;iau &#8212; pasirink save</label>
+        <div class="seg wide" id="seg-vardai"></div>
+      </div>
+      <div class="field">
+        <label for="f-login-vardas">Vardas Pavard&#279;</label>
+        <input type="text" id="f-login-vardas" placeholder="Vardas Pavard&#279;" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="f-login-kodas">Prieigos kodas</label>
+        <input type="text" class="num" id="f-login-kodas" inputmode="numeric" placeholder="kodas" autocomplete="off">
+        <span class="hint" id="hint-login">Kod&#261; duoda Jovita.</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px">
+    <button class="btn btn-primary btn-block" id="btn-login">Prisijungti</button>
+  </div>
+</section>
+
+<!-- ============ SETUP ============ -->
+<section id="scr-setup" hidden>
+  <h1>Kokyb&#279;s patikros aktas</h1>
+  <p class="lede">Duomenys saugomi telefone i&#353; karto &#8212; ry&#353;ys neb&#363;tinas. Nuotraukos pridedamos prie kiekvieno neatitikimo.</p>
+
+  <div class="panel">
+    <div class="panel-head"><span class="eyebrow">Objektas</span></div>
+    <div class="panel-body">
+      <div class="field">
+        <label for="f-obj">Audito u&#382;sakovas / objektas</label>
+        <input type="text" id="f-obj" placeholder="objekto arba u&#382;sakovo pavadinimas" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="f-adr">Pavadinimas, adresas</label>
+        <input type="text" id="f-adr" placeholder="pvz. Bajor&#371; g. 16, Kaunas" autocomplete="off">
+      </div>
+      <div class="grid2">
+        <div class="field">
+          <label for="f-data">Audito data</label>
+          <input type="date" id="f-data">
+        </div>
+        <div class="field">
+          <label for="f-insp">Inspektorius</label>
+          <input type="text" id="f-insp" placeholder="Vardas Pavard&#279;" autocomplete="name">
+          <span class="hint" id="hint-insp">&#302;ra&#353;ius vien&#261; kart&#261;, kit&#261; patikr&#261; &#303;sira&#353;ys pati.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head"><span class="eyebrow">Imtis</span></div>
+    <div class="panel-body">
+      <div class="field">
+        <label>Imties dydis (n) &#8212; tikrinam&#371; vienet&#371; skai&#269;ius</label>
+        <div class="seg" id="seg-imtis"></div>
+        <input type="text" class="num" id="f-n-laisvas" inputmode="numeric" placeholder="arba &#303;ra&#353;yk savo" style="margin-top:4px">
+      </div>
+      <div class="grid2">
+        <div class="field">
+          <label for="f-ac">Priimtinumo skai&#269;ius (Ac)</label>
+          <input type="text" class="num" id="f-ac" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="f-re">Atmetimo skai&#269;ius (Re)</label>
+          <input type="text" class="num" id="f-re" inputmode="numeric">
+        </div>
+      </div>
+      <span class="hint">U&#382;pildoma pagal ISO 2859-1 (AQL 6,5 %). Jei pirkimo dokumentuose kitaip &#8212; &#303;ra&#353;yk ranka.</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head"><span class="eyebrow">Numatytieji TV nustatymai</span></div>
+    <div class="panel-body">
+      <div class="field">
+        <label>Numatytasis TV tipas &#8212; pildant kiekvienam TV galima pakeisti</label>
+        <div class="seg wide" id="seg-tipas">
+          <button type="button" data-v="vidaus" aria-pressed="true">Vidaus patalpos</button>
+          <button type="button" data-v="teritorijos" aria-pressed="false">Lauko teritorija</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>Reikalaujamas TV kokyb&#279;s lygis (KL)</label>
+        <div class="seg" id="seg-kl"></div>
+        <span class="hint">Patalpoms da&#382;niausiai KL4, lauko zonoms &#8212; KL5. Viename akte gali b&#363;ti ir patalp&#371;, ir lauko zon&#371;.</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px">
+    <button class="btn btn-primary btn-block" id="btn-start">Prad&#279;ti patikr&#261;</button>
+  </div>
+  <p class="hint" id="resume-hint" style="margin-top:12px;text-align:center" hidden></p>
+</section>
+
+<!-- ============ TV ============ -->
+<section id="scr-tv" hidden>
+  <div class="panel">
+    <div class="panel-head">
+      <span class="eyebrow">Tikrinamas vienetas</span>
+      <span class="eyebrow" id="tv-count" style="margin-left:auto"></span>
+    </div>
+    <div class="ctx" id="tv-ctx"></div>
+    <div class="panel-body">
+      <div class="grid-tv">
+        <div class="field">
+          <label for="f-aukstas">Auk&#353;tas</label>
+          <input type="text" id="f-aukstas" class="num" placeholder="2 a." autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="f-tvname">Patalpa &#183; kabineto Nr.</label>
+          <input type="text" id="f-tvname" placeholder="pvz. 204 arba WC 2 a." autocomplete="off">
+        </div>
+      </div>
+      <p class="hint" style="margin:-6px 0 14px">Auk&#353;tas persikelia &#303; kit&#261; TV automati&#353;kai.</p>
+      <div class="grid2">
+        <div class="field">
+          <label>&#352;io TV tipas</label>
+          <div class="seg wide" id="seg-tvtipas">
+            <button type="button" data-v="vidaus" aria-pressed="true">Vidaus</button>
+            <button type="button" data-v="teritorijos" aria-pressed="false">Lauko</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Reikalaujamas KL</label>
+          <div class="seg tight" id="seg-tvkl"></div>
+        </div>
+      </div>
+      <div class="field" style="margin-top:14px">
+        <label>Vizualin&#279;s patikros laikas</label>
+        <div class="seg wide" id="seg-laikas">
+          <button type="button" data-v="pries" aria-pressed="true">Prie&#353; naudojim&#261;</button>
+          <button type="button" data-v="po" aria-pressed="false">Naudojimo metu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:14px">
+    <div class="panel-head">
+      <span class="eyebrow">Elementai</span>
+      <span class="eyebrow" style="margin-left:auto">&#10003; atitinka &#183; &#10005; ne &#183; &#8211; netaikoma</span>
+    </div>
+    <div id="elems"></div>
+    <div class="klbox">
+      <div><div class="klnum"><span id="tv-kl">KL7</span><small id="tv-pct"></small></div></div>
+      <div class="klside" id="tv-side"></div>
+      <span class="verdict pass" id="tv-verdict">Pasiektas</span>
+    </div>
+    <div class="panel-body" style="border-top:1px solid var(--line)">
+      <div class="field">
+        <label>Bendros TV nuotraukos</label>
+        <div class="fotorow">
+          <button type="button" class="btn-foto" id="btn-foto-tv">&#128247; Prid&#279;ti nuotrauk&#261;</button>
+          <span class="fotocount" id="fc-tv"></span>
+        </div>
+        <div class="thumbs" id="th-tv"></div>
+      </div>
+      <div class="field" style="margin-top:14px">
+        <label for="f-koment">Komentarai</label>
+        <textarea id="f-koment" placeholder="Neprivaloma"></textarea>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUMMARY ============ -->
+<section id="scr-sum" hidden>
+  <h1 id="sum-title">Ataskaita</h1>
+  <p class="lede" id="sum-sub"></p>
+
+  <div class="panel">
+    <div class="stats">
+      <div class="stat"><div class="lab">Einamoji kokyb&#279; EVQ</div><div class="val" id="s-evq">&#8212;</div><div class="sub" id="s-evqsub"></div></div>
+      <div class="stat"><div class="lab">Element&#371; atitiktis</div><div class="val" id="s-elem">&#8212;</div><div class="sub" id="s-elemsub"></div></div>
+      <div class="stat"><div class="lab">TV atitinka KL</div><div class="val" id="s-ok">&#8212;</div><div class="sub" id="s-oksub"></div></div>
+      <div class="stat"><div class="lab">TV neatitinka</div><div class="val" id="s-bad">&#8212;</div><div class="sub" id="s-acre"></div></div>
+    </div>
+    <div class="final">
+      <div class="final-txt" id="s-final"></div>
+      <span class="verdict pass" id="s-verdict">&#8212;</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head"><span class="eyebrow">Element&#371; grupi&#371; valymo kokyb&#279;</span></div>
+    <table class="tbl"><thead><tr><th>Grup&#279;</th><th class="n">Atit./vert.</th><th class="n">Kokyb&#279;</th></tr></thead>
+    <tbody id="s-grupes"></tbody></table>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head"><span class="eyebrow">TV kokyb&#279;s lygi&#371; pasiskirstymas</span></div>
+    <table class="tbl"><thead><tr><th>Kokyb&#279;s lygis</th><th class="n">TV skai&#269;ius</th></tr></thead>
+    <tbody id="s-kldist"></tbody></table>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head"><span class="eyebrow">Tikrinami vienetai</span></div>
+    <ul class="tvlist" id="s-list"></ul>
+  </div>
+
+  <div class="panel" id="p-nkt" hidden>
+    <div class="panel-head"><span class="eyebrow">Neatitikimai ir fotofiksacijos</span></div>
+    <div id="s-nkt"></div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head"><span class="eyebrow">Perdavimas</span></div>
+    <div class="syncrow sp">
+      <div class="syncmsg">
+        <b class="sp-title">Si&#371;sti &#303; SharePoint</b>
+        <span id="sp-msg">Pilnas aktas su nuotraukomis PDF faile.</span>
+        <ol class="sp-kelias" id="sp-kelias" hidden>
+          <li>Dalinimosi lange pasirink <b>SharePoint</b> arba <b>OneDrive</b>.</li>
+          <li>Svetain&#279; <b>Prisijunkite</b> &#8594; <b>Bendrai naudojami dokumentai</b>.</li>
+          <li><b>Kokyb&#279;s skyrius</b> &#8594; objekto aplankas &#8594; &#303;kelti.</li>
+        </ol>
+      </div>
+      <button class="btn btn-primary" id="btn-sp">Paruo&#353;ti PDF</button>
+    </div>
+    <div class="syncrow">
+      <span class="syncmsg">Tas pats aktas popieriui.</span>
+      <button class="btn btn-ghost" id="btn-pdf">Spausdinti</button>
+    </div>
+    <div class="syncrow">
+      <span class="syncmsg" id="sync-msg"><span class="dot"></span>Duomenys saugomi telefone.</span>
+      <button class="btn btn-primary" id="btn-sync" hidden>&#302;kelti &#303; debes&#303;</button>
+    </div>
+    <div class="syncrow">
+      <span class="syncmsg">Skai&#269;i&#371; lentel&#279; &#8212; &#303;klijuoti &#303; Excel akt&#261;.</span>
+      <button class="btn btn-ghost" id="btn-copy">Kopijuoti</button>
+    </div>
+    <div class="syncrow">
+      <span class="syncmsg">Baigus &#8212; prad&#279;ti kit&#261; objekt&#261;. &#352;ie duomenys ir nuotraukos bus i&#353;trinti.</span>
+      <button class="btn btn-ghost" id="btn-new">Nauja patikra</button>
+    </div>
+  </div>
+</section>
+
+</div></main>
+
+<footer class="nav" id="nav" hidden>
+  <div class="wrap">
+    <button class="btn btn-ghost" id="btn-prev">&#8249;</button>
+    <div class="grow navlabel"><b id="nav-name">&#8212;</b><span id="nav-pos"></span></div>
+    <button class="btn btn-primary" id="btn-next">&#8250;</button>
+  </div>
+</footer>
+
+
+<section id="print"></section>
+<input type="file" id="fileinput" accept="image/*" capture="environment" multiple hidden>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<script>
+/* IBM Plex Sans (SIL OFL), tik lotyniškos ir lietuviškos raidės */
+const PLEX_R = "AAEAAAAOAIAAAwBgR0RFRgj6CMYAAF/0AAAAXkdQT1NEdkx1AABgVAAAACBHU1VCkxWCFgAAYHQAAAA2T1MvMmg1DmgAAAFoAAAAYGNtYXAlCeeVAAAHcAAAAsJnYXNwABgAIwAAX+QAAAAQZ2x5ZviXUUIAAA0MAABN5GhlYWQp8BzqAAAA7AAAADZoaGVhBtIDZgAAASQAAAAkaG10eAEBWAsAAAHIAAAFqGxvY2HImrQyAAAKNAAAAtZtYXhwAXcAuAAAAUgAAAAgbmFtZXFfnd4AAFrwAAAE1HBvc3T/pAA8AABfxAAAACAAAQAAAAMBR8GuuzpfDzz1AAsD6AAAAADhMJhFAAAAAObQP5r/Nf8LA5kD0wAAAAkAAgAAAAAAAAABAAAEAf7tAAAD2f81/zUDmQABAAAAAAAAAAAAAAAAAAABagABAAABagBUAAUAYgAEAAEAAAAAAAAAAAAAAAAAAwABAAQCTwGQAAUAAAKKAlgAAABLAooCWAAAAV4APAE1CAECCwUDBQIDAAIDgAAABwAAAAIAAAAAAAAAAElCTSABQAAgJxMDDP8kASwEAQETAAAAkwAAAAACBAK6AAAAIAACAdgAIADsAAACFgAsAkQAVQH3AC8CRAAyAiUALwFEAB0CEAArAhMAKwI4AFUA+gBMAPoAAQIPAFUBEABVA2kAVQI4AFUCMAAvAkQAVQJEADIBbwBVAecAJAFfAB0COABQAewAEgMAAB8B+wAVAfMAEQHQACECgQAXAo0AXQJtADoCnwBdAkcAXQIvAF0CtwA6AsMAXQGQADwB/gAcAnoAXQH1AF0DLABdAsMAXQLEADoCXgBdAsQAOgKAAF0CRQAqAjwAFgKmAFgCYQAUA3sAFAJlABgCUQANAkQAJAJYADwCWAAzAlgARQJYACoCWAAmAlgATQJYAEMCWABFAlgAOgJYAEMCtgBIA3sAQQGPAEUCTAAkAwwAJAI1AB4BEABLAyMASwEkAFUBEAAnASQAMQDyAFUBowBVAREARwERACwB2wBHAdoALAESACMB2wAjATAAJAEwADQCAQAkAgEANAEcAFEBHABRAdMAJQHdABcBTwBTAU//+wE9AF0BPQA8AVcAFgFXADwBfwAJAX8AKACT/zUDnwBBAToAewE6AHsCSgBMAowANAMIADYB3AAoAY8AKAGOACwB1ABCAcIAJALJADwCWAAyAlgAPQJYAEMCWABDAlgAXAJYAEMCWABDAlgAWgJYAFoCWABaAlgAWgFGAGYBjABMAlgAQwJkABICAgAvAnEAOgJTADwCVgA0Al0AIgIWACwCFgAsAhYALAIWACwCFgAsAhYALAIWACwCFgAsAhYALANgACwB9wAvAfcALwH3AC8B9wAvAfcALwJbADICRwAyAisALwIlAC8CJQAvAiUALwIlAC8CJQAvAiUALwIlAC8CJQAvAiUALwITACsCEwArAhMAKwITACsCOAAVAjj/3wD6AFUA+gBRAPr/5gD6/90A+v/wAPoADQD6//IA+gADAPr/1gHwAEwA+gABAPr/3QIPAFUCDwBVARAAUQESAFUBEABVAWYAVQEWABICOABVAjgAVQI4AFUCOABVAysALAI4AFUCMAAvAjAALwIwAC8CMAAvAjAALwIwAC8CMAAvAjgAIwIwAC8DowAvAW8AVQFvADsBbwA8AecAJAHnACQB5wAkAecAJAEWAB0CgAAdAWUAIAFfAB0BXwAdAkQAVQI4AFACOABQAjgAUAI4AFACOABQAjgAUAI4AFACOABQAjgAUAI4AFADAAAfAfMAEQHzABEB8wARAdAAIQHQACEB0AAhAoEAFwKBABcCgQAXAoEAFwKBABcCgQAXAoEAFwKBABcCgQAXA4sABAJtADoCbQA6Am0AOgJtADoCbQA6Ap8AXQKiABECogARAkcAXQJHAF0CRwBdAkcAXQJHAF0CRwBdAkcAXQJHAF0CRwBdArcAOgK3ADoCtwA6ArcAOgLJABsCwwBdAZAAPAGQADEBkAAoAZAAOgGQADwBkAA8AZAAPAGQADwBkAAhAoUAWAH+ABwCegBdAfUAWwH1AF0B9QBdAfUAXQH8//kCwwBdAsMAXQLDAF0CwwBdAsMAXQLEADoCxAA6AsQAOgLEADoCxAA6AsQAOgLEADoCxAA6AsQAOgPZADoCgABdAoAAXQKAAF0CRQAqAkUAKgJFACoCRQAqAkYAGwI8ABYCPAAWAl4AXQKmAFgCpgBYAqYAWAKmAFgCpgBYAqYAWAKmAFgCpgBYAqYAWAKmAFgDewAUAlEADQJRAA0CUQANAkQAJAJEACQCRAAkAj0AVQFnACABWgAiAVoAGAFaACIBWgAUA2gAIANPACADOAAYA5AAfgJYAIQCWACg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AAkAZgGWAAMAAQQJAAsAMgH8AAMAAQQJAAwAJAIuAAMAAQQJAA0BIAJSAAMAAQQJAA4ANANyAAMAAQQJABMAdAOmAEMAbwBwAHkAcgBpAGcAaAB0ACAAMgAwADEAOAAgAEkAQgBNACAAQwBvAHIAcAAuACAAQQBsAGwAIAByAGkAZwBoAHQAcwAgAHIAZQBzAGUAcgB2AGUAZAAuAEkAQgBNACAAUABsAGUAeAAgAFMAYQBuAHMAUgBlAGcAdQBsAGEAcgAzAC4AMAAwADUAOwBJAEIATQAgADsASQBCAE0AUABsAGUAeABTAGEAbgBzAFYAZQByAHMAaQBvAG4AIAAzAC4AMAAwADUASQBCAE0AUABsAGUAeABTAGEAbgBzAEkAQgBNACAAUABsAGUAeACuACAAaQBzACAAYQAgAHQAcgBhAGQAZQBtAGEAcgBrACAAbwBmACAASQBCAE0AIABDAG8AcgBwACwAIAByAGUAZwBpAHMAdABlAHIAZQBkACAAaQBuACAAbQBhAG4AeQAgAGoAdQByAGkAcwBkAGkAYwB0AGkAbwBuAHMAIAB3AG8AcgBsAGQAdwBpAGQAZQAuAEIAbwBsAGQAIABNAG8AbgBkAGEAeQBNAGkAawBlACAAQQBiAGIAaQBuAGsALAAgAFAAYQB1AGwAIAB2AGEAbgAgAGQAZQByACAATABhAGEAbgAsACAAUABpAGUAdABlAHIAIAB2AGEAbgAgAFIAbwBzAG0AYQBsAGUAbgBoAHQAdABwADoALwAvAHcAdwB3AC4AYgBvAGwAZABtAG8AbgBkAGEAeQAuAGMAbwBtAGgAdAB0AHAAOgAvAC8AdwB3AHcALgBpAGIAbQAuAGMAbwBtAFQAaABpAHMAIABGAG8AbgB0ACAAUwBvAGYAdAB3AGEAcgBlACAAaQBzACAAbABpAGMAZQBuAHMAZQBkACAAdQBuAGQAZQByACAAdABoAGUAIABTAEkATAAgAE8AcABlAG4AIABGAG8AbgB0ACAATABpAGMAZQBuAHMAZQAsACAAVgBlAHIAcwBpAG8AbgAgADEALgAxAC4AIABUAGgAaQBzACAAbABpAGMAZQBuAHMAZQAgAGkAcwAgAGEAdgBhAGkAbABhAGIAbABlACAAdwBpAHQAaAAgAGEAIABGAEEAUQAgAGEAdAA6ACAAaAB0AHQAcAA6AC8ALwBzAGMAcgBpAHAAdABzAC4AcwBpAGwALgBvAHIAZwAvAE8ARgBMAGgAdAB0AHAAOgAvAC8AcwBjAHIAaQBwAHQAcwAuAHMAaQBsAC4AbwByAGcALwBPAEYATABIAG8AdwAgAHIAYQB6AG8AcgBiAGEAYwBrAC0AagB1AG0AcABpAG4AZwAgAGYAcgBvAGcAcwAgAGMAYQBuACAAbABlAHYAZQBsACAAcwBpAHgAIABwAGkAcQB1AGUAZAAgAGcAeQBtAG4AYQBzAHQAcwAhAAMAAAAAAAD/oQA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQADAAgACgAQAAf//wAPAAEAAAAMAAAAAAAAAAIADQACAAgAAQAKAAsAAQANADYAAQCFAJ8AAQCkAKwAAQCuAK4AAQCzALcAAQC5AM8AAQDSANMAAQDWARAAAQESARcAAQEZATAAAQEzAUMAAQAAAAEAAAAKABwAHgABREZMVAAIAAQAAAAA//8AAAAAAAAAAQAAAAoAMgA0AARERkxUABpjeXJsACRncmVrACRsYXRuACQABAAAAAD//wAAAAAAAAAAAAAAAA==";
+const PLEX_B = "AAEAAAAOAIAAAwBgR0RFRgj6CMYAAF/IAAAAXkdQT1NEdkx1AABgKAAAACBHU1VCkxWCFgAAYEgAAAA2T1MvMmlnEZQAAAFoAAAAYGNtYXAlCeeVAAAHcAAAAsJnYXNwABgAIwAAX7gAAAAQZ2x5ZptM5NwAAA0MAABNhGhlYWQp3hzrAAAA7AAAADZoaGVhBr8DSQAAASQAAAAkaG10eCPRRjoAAAHIAAAFqGxvY2GmFJHPAAAKNAAAAtZtYXhwAXcAuQAAAUgAAAAgbmFtZXjBoLgAAFqQAAAFBnBvc3T/wQBkAABfmAAAACAAAQAAAAMBR2qX8bJfDzz1AAsD6AAAAADhMJg/AAAAAObQP5r/C/7tA7AD+AABAAkAAgAAAAAAAAABAAAEAf7tAAAD5v8L/wsDsAABAAAAAAAAAAAAAAAAAAABagABAAABagBUAAUAYwAEAAEAAAAAAAAAAAAAAAAAAwABAAQCagK8AAUAAAKKAlgAAABLAooCWAAAAV4AZAE7CAECCwgDBQIDAAIDgAAABwAAAAIAAAAAAAAAAElCTSABIAAgJxMDDP8kASwEAQETAAAAkwAAAAACDQK6AAAAIAACAdgAIADsAAACOQAiAmAARQIFACQCYAArAjIAJAFpABUCKAAWAjIAFgJUAEUBHgA5AR7/9wJBAEUBLwBFA34ARQJUAEUCNAAkAmAARQJgACsBlABFAfgAGgF/ABcCVAA/AhoACQNJABMCMAASAhYABgIGACcCrQAUApsATQKLADICuQBNAl8ATQJJAE0CzwAyAtQATQGwADICLwAZArgATQISAE0DMwBNAtQATQLKADICkABNAsoAMgKiAE0CcAAmAkgAGwK2AEkCigAOA80AHQKhABACiQAJAl8AJwJYAB8CWAAjAlgAKgJYABACWAAeAlgALgJYACoCWAA3AlgAKAJYACIC0QAyA4cAPQGTADUCTAAkAwwAJAIsAB4BNgBDA4EAQwFKAE0BNgAkAUoALgEMAEQB7QBEASwAPgEsACQCFwA+AhcAJAEwACYCGwAmAT0AJgE9ADICLgAmAi4AMgFAAEcBQABHAe4AGwH0AA4BUgAlAVL/8wFOAE0BTgAyAXQAEwF0ADIBzAADAcwAJACT/wsDzgAyAZIAigGSAIoCOQAyAqUAHwMYADAB0AAeAcEALgGxACYB1gAyAlkAIAJ4AAsCWAAqAlgANQJYAEMCWABDAlgATwJYAEMCWABDAlgAZwJYAGcCWABnAlgAZwFmAFsBrgA+AlgANAJ0AAoCKAApAnMAMgJGACICWQAgAooAEwI5ACICOQAiAjkAIgI5ACICOQAiAjkAIgI5ACICOQAiAjkAIgNgACICBQAkAgUAJAIFACQCBQAkAgUAJAKqACsCYwArAlsAKQIyACQCMgAkAjIAJAIyACQCMgAkAjIAJAIyACQCMgAkAjIAJAIyABYCMgAWAjIAFgIyABYCVAAHAlT/zgEeAEUBHgBFAR7/0gEe/84BHv/SAR7/+gEe//cBHgADAR7/0gI2ADkBHv/3AR7/zgJBAEUCQQBFAS8ARQFoAEUBLwBFAcAARQE6//4CVABFAlQARQJUAEUCVABFA3YAJAJUAEUCNAAkAjQAJAI0ACQCNAAkAjQAJAI0ACQCNAAkAjwADgI0ACQDhQAkAZQARQGUAB8BlAA8AfgAGgH4ABoB+AAaAfgAGgE4ABUCtAAVAYcAGwGEABcBfwAXAmAARQJUAD8CVAA/AlQAPwJUAD8CVAA/AlQAPwJUAD8CVAA/AlQAPwJUAD8DSQATAhYABgIWAAYCFgAGAgYAJwIGACcCBgAnAq0AFAKtABQCrQAUAq0AFAKtABQCrQAUAq0AFAKtABQCrQAUA8j//wKLADICiwAyAosAMgKLADICiwAyArkATQK+AAcCvgAHAl8ATQJfAE0CXwBNAl8ATQJfAE0CXwBNAl8ATQJfAE0CXwBNAs8AMgLPADICzwAyAs8AMgLeAAgC1ABNAbAAMgGwABsBsAAXAbAAGwGwADIBsAAyAbAAMgGwADIBsAAbApAASQIvABkCuABNAhIATQISAE0CEgBNAhIATQIc//kC1ABNAtQATQLUAE0C1ABNAtQATQLKADICygAyAsoAMgLKADICygAyAsoAMgLKADICygAyAsoAMgPmADICogBNAqIATQKiAE0CcAAmAnAAJgJwACYCcAAmAlIAIAJIABsCSAAbApAATQK2AEkCtgBJArYASQK2AEkCtgBJArYASQK2AEkCtgBJArYASQK2AEkDzQAdAokACQKJAAkCiQAJAl8AJwJfACcCXwAnAloARQFYAAgBWwAWAVkABAFbABYBWgARA1sACANFAAgDPAAEA5AAcQJYAG4CWACT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AEkAQgBNACAAQwBvAHIAcAAuACAAQQBsAGwAIAByAGkAZwBoAHQAcwAgAHIAZQBzAGUAcgB2AGUAZAAuAEkAQgBNACAAUABsAGUAeAAgAFMAYQBuAHMAQgBvAGwAZAAzAC4AMAAwADUAOwBJAEIATQAgADsASQBCAE0AUABsAGUAeABTAGEAbgBzAC0AQgBvAGwAZABJAEIATQAgAFAAbABlAHgAIABTAGEAbgBzACAAQgBvAGwAZABWAGUAcgBzAGkAbwBuACAAMwAuADAAMAA1AEkAQgBNAFAAbABlAHgAUwBhAG4AcwAtAEIAbwBsAGQASQBCAE0AIABQAGwAZQB4AK4AIABpAHMAIABhACAAdAByAGEAZABlAG0AYQByAGsAIABvAGYAIABJAEIATQAgAEMAbwByAHAALAAgAHIAZQBnAGkAcwB0AGUAcgBlAGQAIABpAG4AIABtAGEAbgB5ACAAagB1AHIAaQBzAGQAaQBjAHQAaQBvAG4AcwAgAHcAbwByAGwAZAB3AGkAZABlAC4AQgBvAGwAZAAgAE0AbwBuAGQAYQB5AE0AaQBrAGUAIABBAGIAYgBpAG4AawAsACAAUABhAHUAbAAgAHYAYQBuACAAZABlAHIAIABMAGEAYQBuACwAIABQAGkAZQB0AGUAcgAgAHYAYQBuACAAUgBvAHMAbQBhAGwAZQBuAGgAdAB0AHAAOgAvAC8AdwB3AHcALgBiAG8AbABkAG0AbwBuAGQAYQB5AC4AYwBvAG0AaAB0AHQAcAA6AC8ALwB3AHcAdwAuAGkAYgBtAC4AYwBvAG0AVABoAGkAcwAgAEYAbwBuAHQAIABTAG8AZgB0AHcAYQByAGUAIABpAHMAIABsAGkAYwBlAG4AcwBlAGQAIAB1AG4AZABlAHIAIAB0AGgAZQAgAFMASQBMACAATwBwAGUAbgAgAEYAbwBuAHQAIABMAGkAYwBlAG4AcwBlACwAIABWAGUAcgBzAGkAbwBuACAAMQAuADEALgAgAFQAaABpAHMAIABsAGkAYwBlAG4AcwBlACAAaQBzACAAYQB2AGEAaQBsAGEAYgBsAGUAIAB3AGkAdABoACAAYQAgAEYAQQBRACAAYQB0ADoAIABoAHQAdABwADoALwAvAHMAYwByAGkAcAB0AHMALgBzAGkAbAAuAG8AcgBnAC8ATwBGAEwAaAB0AHQAcAA6AC8ALwBzAGMAcgBpAHAAdABzAC4AcwBpAGwALgBvAHIAZwAvAE8ARgBMAEgAbwB3ACAAcgBhAHoAbwByAGIAYQBjAGsALQBqAHUAbQBwAGkAbgBnACAAZgByAG8AZwBzACAAYwBhAG4AIABsAGUAdgBlAGwAIABzAGkAeAAgAHAAaQBxAHUAZQBkACAAZwB5AG0AbgBhAHMAdABzACEAAAADAAAAAAAA/74AZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAwAIAAoAEAAH//8ADwABAAAADAAAAAAAAAACAA0AAgAIAAEACgALAAEADQA2AAEAhQCfAAEApACsAAEArgCuAAEAswC3AAEAuQDPAAEA0gDTAAEA1gEQAAEBEgEXAAEBGQEwAAEBMwFDAAEAAAABAAAACgAcAB4AAURGTFQACAAEAAAAAP//AAAAAAAAAAEAAAAKADIANAAEREZMVAAaY3lybAAkZ3JlawAkbGF0bgAkAAQAAAAA//8AAAAAAAAAAAAAAAA=";
+</script>
+<script>
+"use strict";
+
+/* ============ elementai i\u0161 Vitarestos Excel akt\u0173 ============ */
+const ELEMENTAI = {
+  vidaus: [
+    ["Lub\u0173 grup\u0117", ["Lubos","Kiti lub\u0173 atributai"]],
+    ["Sien\u0173 grup\u0117", ["Sienos","Sien\u0173 kontaktin\u0117s vietos","Kiti sien\u0173 atributai","Durys","Stiklas","Kiti stiklo atributai"]],
+    ["Grind\u0173 grup\u0117", ["Grindys","Grindjuost\u0117s","Grind\u0173 \u0161onai ir kampai","Grindys po \u012franga ir inventoriumi","Kiti grind\u0173 atributai (\u012fmontuoti \u012f grindis)","Kiti grind\u0173 atributai (ne\u012fmontuoti \u012f grindis)"]],
+    ["\u012erangos ir inventoriaus grup\u0117", ["S\u0117dimos vietos","Stalai","Kiti baldai","Organizacin\u0117 technika","Buitin\u0117 technika","Kita \u012franga","\u0160iuk\u0161liad\u0117\u017e\u0117s"]],
+    ["Sanitarin\u0117s \u012frangos grup\u0117", ["Unitazai","Pisuarai/bide","Kriaukl\u0117s","Vandens mai\u0161ytuvai","Higienos laikikliai","Kita santechnin\u0117 \u012franga"]]
+  ],
+  teritorijos: [
+    ["Augalijos grup\u0117", ["\u017daliosios zonos","\u017dali\u0173j\u0173 zon\u0173 \u0161onai ir kampai","Vienme\u010diai augalai","Daugiame\u010diai augalai"]],
+    ["Kietosios dangos grup\u0117", ["P\u0117s\u010di\u0173j\u0173 zonos","P\u0117s\u010di\u0173j\u0173 zon\u0173 \u0161onai ir kampai","Lankytoj\u0173 zonos","Transporto zonos","Transporto zon\u0173 \u0161onai ir kampai","Kitos zonos"]],
+    ["Lauko inventoriaus grup\u0117", ["\u0160iuk\u0161liad\u0117\u017e\u0117s","Lauko \u012franga","Lauko baldai"]],
+    ["Su pastatu susijusio inventoriaus grup\u0117", ["Durys","Langai","\u012e\u0117jim\u0173/i\u0161\u0117jim\u0173 grindys","\u012e\u0117jim\u0173/i\u0161\u0117jim\u0173 sienos","\u012e\u0117jim\u0173/i\u0161\u0117jim\u0173 lubos","Kitas inventorius"]]
+  ]
+};
+const IMTYS = [2,3,5,8,13,18,20,32,50];
+/* ISO 2859-1, vienpakopis normalus tikrinimas, AQL 6,5 % */
+const ACRE = {2:[0,1],3:[0,1],5:[0,1],8:[1,2],13:[2,3],18:[2,3],20:[3,4],32:[5,6],50:[7,8]};
+
+const flat = t => ELEMENTAI[t].reduce((a,[,xs])=>a.concat(xs),[]);
+/* leistini element\u0173 raktai pagal TV tip\u0105 \u2014 apsauga nuo sen\u0173 \u012fverti\u0173,
+   likusi\u0173 telefone po programos atnaujinimo */
+const RAKTAI = {};
+function raktaiOf(tipas){
+  if(!RAKTAI[tipas]) RAKTAI[tipas] = new Set(
+    ELEMENTAI[tipas].reduce((a,[g,xs])=>a.concat(xs.map(x=>g+"|"+x)),[]));
+  return RAKTAI[tipas];
+}
+/* pa\u0161alina \u012fver\u010dius, kuri\u0173 element\u0173 s\u0105ra\u0161e nebe\u0117ra;
+   prie j\u0173 prisegtos nuotraukos lieka kaip bendros TV nuotraukos */
+function isvalykIvert(t){
+  const geri = raktaiOf(t.tipas);
+  Object.keys(t.ivert).forEach(k=>{
+    if(geri.has(k)) return;
+    delete t.ivert[k];
+    if(t.detales) delete t.detales[k];
+    t.foto.forEach(f=>{ if(f.key===k) f.key = null; });
+  });
+}
+const blogi = t => {
+  const geri = raktaiOf(t.tipas);
+  return Object.keys(t.ivert).filter(k=>t.ivert[k]===0 && geri.has(k));
+};
+const klOf = p => p>=100?7 : p>=90?6 : p>=80?5 : p>=75?4 : p>=65?3 : p>=50?2 : p>=20?1 : 0;
+const pct1 = x => (Math.round(x*100)/100).toFixed(2);
+/* lietuviskas kablelis skaiciuose */
+const lt = x => String(x).replace(".", ",");
+/* kiek TV kurio tipo \u2014 patalpos ir lauko zonos viename akte */
+function tipuSantrauka(){
+  const v = S.tv.filter(t=>t.tipas==="vidaus").length;
+  const l = S.tv.filter(t=>t.tipas==="teritorijos").length;
+  if(v && l) return "vidaus patalpos " + v + " + lauko zonos " + l;
+  return l ? "lauko teritorija" : "vidaus patalpos";
+}
+
+/* ============ nuotrauk\u0173 saugykla (IndexedDB) ============ */
+const IDB_NAME = "vitaresta-kk-foto", IDB_STORE = "foto";
+let idbP = null;
+function idb(){
+  if(idbP) return idbP;
+  idbP = new Promise((res,rej)=>{
+    const rq = indexedDB.open(IDB_NAME, 1);
+    rq.onupgradeneeded = ()=>{ rq.result.createObjectStore(IDB_STORE); };
+    rq.onsuccess = ()=>res(rq.result);
+    rq.onerror = ()=>rej(rq.error);
+  }).catch(()=>null);
+  return idbP;
+}
+async function fotoRasyk(id, dataUrl){
+  const d = await idb(); if(!d) return false;
+  return new Promise(res=>{
+    const tx = d.transaction(IDB_STORE,"readwrite");
+    tx.objectStore(IDB_STORE).put(dataUrl, id);
+    tx.oncomplete = ()=>res(true); tx.onerror = ()=>res(false);
+  });
+}
+async function fotoSkaityk(id){
+  const d = await idb(); if(!d) return null;
+  return new Promise(res=>{
+    const rq = d.transaction(IDB_STORE,"readonly").objectStore(IDB_STORE).get(id);
+    rq.onsuccess = ()=>res(rq.result || null); rq.onerror = ()=>res(null);
+  });
+}
+async function fotoTrink(id){
+  const d = await idb(); if(!d) return;
+  const tx = d.transaction(IDB_STORE,"readwrite");
+  tx.objectStore(IDB_STORE).delete(id);
+}
+async function fotoValyk(){
+  const d = await idb(); if(!d) return;
+  const tx = d.transaction(IDB_STORE,"readwrite");
+  tx.objectStore(IDB_STORE).clear();
+}
+
+/* suma\u017eina nuotrauk\u0105, kad tilpt\u0173 \u012f 190 KB */
+function sumazink(file){
+  return new Promise((res,rej)=>{
+    const fr = new FileReader();
+    fr.onerror = ()=>rej(new Error("nepavyko perskaityti"));
+    fr.onload = ()=>{
+      const img = new Image();
+      img.onerror = ()=>rej(new Error("netinkamas failas"));
+      img.onload = ()=>{
+        const MAX = 1100;
+        let w = img.width, h = img.height;
+        if(w > h && w > MAX){ h = Math.round(h*MAX/w); w = MAX; }
+        else if(h >= w && h > MAX){ w = Math.round(w*MAX/h); h = MAX; }
+        const c = document.createElement("canvas");
+        c.width = w; c.height = h;
+        c.getContext("2d").drawImage(img, 0, 0, w, h);
+        let q = 0.66, out = c.toDataURL("image/jpeg", q);
+        while(out.length > 190000 && q > 0.3){ q -= 0.12; out = c.toDataURL("image/jpeg", q); }
+        res(out);
+      };
+      img.src = fr.result;
+    };
+    fr.readAsDataURL(file);
+  });
+}
+
+/* ============ b\u016bsena ============ */
+const KEY = "vitaresta-kk-v2", KEY_INSP = "vitaresta-kk-inspektorius";
+const KEY_LOGIN = "vitaresta-kk-prisijunges", KEY_VARDAI = "vitaresta-kk-vardai";
+/* bendras prieigos kodas kolegoms \u2014 Vitarestos \u012fk\u016brimo metai */
+const PRIEIGOS_KODAS = "1998";
+let S = null, cur = 0, db = null, fotoTaikinys = null;
+
+function siandien(){
+  const d = new Date();
+  return new Date(d.getTime() - d.getTimezoneOffset()*60000).toISOString().slice(0,10);
+}
+const hhmm = iso => new Date(iso).toLocaleTimeString("lt-LT",{hour:"2-digit",minute:"2-digit"});
+function isimintasInsp(){ try{ return localStorage.getItem(KEY_INSP)||""; }catch(e){ return ""; } }
+
+function naujas(){
+  return { id:"a"+Date.now().toString(36), objektas:"", adresas:"",
+    data:siandien(), inspektorius:isimintasInsp(),
+    n:18, ac:2, re:3, tipas:"vidaus", klReik:4,
+    pradeta:null, tv:[], baigta:false };
+}
+function tuscias(){
+  return { aukstas:"", pav:"", tipas:S.tipas, klReik:S.klReik, laikas:"pries",
+           ivert:{}, detales:{}, foto:[], koment:"", uzpildyta:null };
+}
+function tvVardas(t,i){
+  const d = [t.aukstas, t.pav].filter(x=>x && x.trim()).join(" \u00b7 ");
+  return d || "TV " + (i+1);
+}
+function saugoti(){ pdfVer++; try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+function skaityti(){ try{ const r=localStorage.getItem(KEY); return r?JSON.parse(r):null; }catch(e){ return null; } }
+
+/* ============ skai\u010diavimai ============ */
+function tvSant(t){
+  const geri = raktaiOf(t.tipas);
+  let ok=0, bad=0;
+  for(const k in t.ivert){ if(!geri.has(k)) continue;
+    if(t.ivert[k]===1) ok++; else if(t.ivert[k]===0) bad++; }
+  const vis = ok+bad, dalis = vis ? ok/vis : 1, p = dalis*100;
+  const kl = klOf(p);
+  return { ok, bad, vis, na: flat(t.tipas).length - vis, dalis, pct:p, kl, pass: kl >= t.klReik };
+}
+function auditSant(){
+  const r = S.tv.map(tvSant);
+  const evq = r.length ? r.reduce((a,x)=>a+x.dalis,0)/r.length : 1;
+  let eOk=0, eVis=0;
+  r.forEach(x=>{ eOk+=x.ok; eVis+=x.vis; });
+  const neat = r.filter(x=>!x.pass).length;
+  const foto = S.tv.reduce((a,t)=>a+t.foto.length,0);
+  return { r, evq, evqPct:evq*100, evqKl:klOf(evq*100),
+           eOk, eVis, elemPct: eVis ? 100*eOk/eVis : 100,
+           atit: r.length-neat, neat, foto, priimtina: neat <= S.ac };
+}
+/* element\u0173 grupi\u0173 kokyb\u0117 per visus TV */
+function grupiuKokybe(){
+  const m = new Map();
+  S.tv.forEach(t=>{
+    const geri = raktaiOf(t.tipas);
+    for(const k in t.ivert){
+      if(!geri.has(k)) continue;
+      const v = t.ivert[k]; if(v!==0 && v!==1) continue;
+      const g = k.split("|")[0];
+      if(!m.has(g)) m.set(g, {ok:0, vis:0});
+      const o = m.get(g); o.vis++; if(v===1) o.ok++;
+    }
+  });
+  return [...m.entries()].map(([g,o])=>({grupe:g, ok:o.ok, vis:o.vis, pct: o.vis?100*o.ok/o.vis:0}))
+    .sort((a,b)=>a.pct-b.pct);
+}
+function klPasiskirstymas(){
+  const c = {};
+  for(let i=0;i<=7;i++) c[i]=0;
+  S.tv.forEach(t=>{ c[tvSant(t).kl]++; });
+  return c;
+}
+
+/* ============ ekranai ============ */
+const $ = id => document.getElementById(id);
+const EKR = ["scr-setup","scr-tv","scr-sum"];
+let ekranas = "scr-setup";
+function rodyk(id){
+  ekranas = id;
+  EKR.forEach(e => $(e).hidden = (e!==id));
+  $("nav").hidden = (id==="scr-setup");
+  $("topmeta").hidden = (id==="scr-setup");
+  $("btn-setup").hidden = (id==="scr-setup");
+  $("btn-logout").hidden = (id!=="scr-setup");
+  $("btn-next").disabled = false;
+  window.scrollTo(0,0);
+  if(id==="scr-tv") piesTV();
+  if(id==="scr-sum") piesSuvestine();
+  virsus();
+}
+function virsus(){
+  const a = auditSant();
+  $("m-tv").textContent = ekranas==="scr-sum" ? S.n+"/"+S.n : (cur+1)+"/"+S.n;
+  $("m-evq").textContent = Math.floor(a.evqPct)+"%";
+  $("m-bad").textContent = a.neat;
+  $("m-foto").textContent = a.foto;
+  $("prog").style.width = (ekranas==="scr-setup" ? 0
+    : Math.round(100*(ekranas==="scr-sum" ? S.n : cur)/S.n)) + "%";
+}
+function segmentai(el, reiksmes, dabar, cb, etikete){
+  el.innerHTML = "";
+  reiksmes.forEach(v=>{
+    const b = document.createElement("button");
+    b.type = "button";
+    b.textContent = etikete ? etikete(v) : v;
+    b.setAttribute("aria-pressed", String(v===dabar));
+    b.addEventListener("click", ()=>cb(v));
+    el.appendChild(b);
+  });
+}
+
+/* ---------- setup ---------- */
+function piesSetup(){
+  document.querySelectorAll("#seg-tipas button").forEach(b=>
+    b.setAttribute("aria-pressed", String(b.dataset.v===S.tipas)));
+  $("f-obj").value = S.objektas; $("f-adr").value = S.adresas;
+  $("f-data").value = S.data;    $("f-insp").value = S.inspektorius;
+  segmentai($("seg-imtis"), IMTYS, S.n, v=>{
+    S.n = v; const p = ACRE[v]; if(p){ S.ac=p[0]; S.re=p[1]; }
+    $("f-n-laisvas").value = ""; saugoti(); piesSetup();
+  });
+  segmentai($("seg-kl"), [1,2,3,4,5,6,7], S.klReik,
+    v=>{ S.klReik=v; saugoti(); piesSetup(); }, v=>"KL"+v);
+  $("f-ac").value = S.ac; $("f-re").value = S.re;
+  $("btn-start").textContent = S.pradeta ? "T\u0119sti patikr\u0105" : "Prad\u0117ti patikr\u0105";
+}
+document.querySelectorAll("#seg-tipas button").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    if(S.tipas === b.dataset.v) return;
+    S.tipas = b.dataset.v;
+    if(S.tipas === "teritorijos" && S.klReik === 4) S.klReik = 5;
+    if(S.tipas === "vidaus" && S.klReik === 5) S.klReik = 4;
+    /* kei\u010diamas tik numatytasis \u2014 jau pildyti TV lieka su savo tipu */
+    S.tv.forEach(t=>{
+      if(t.uzpildyta) return;
+      t.tipas = S.tipas; t.klReik = S.klReik; t.ivert = {}; t.detales = {};
+    });
+    saugoti(); piesSetup();
+  });
+});
+[["f-obj","objektas"],["f-adr","adresas"],["f-data","data"],["f-insp","inspektorius"]].forEach(([id,k])=>{
+  $(id).addEventListener("input", e=>{
+    S[k] = e.target.value; saugoti();
+    if(k==="inspektorius"){
+      try{ localStorage.setItem(KEY_INSP, e.target.value); }catch(err){}
+      $("hint-insp").className = "hint";
+      $("hint-insp").textContent = "\u012era\u0161ius vien\u0105 kart\u0105, kit\u0105 patikr\u0105 \u012fsira\u0161ys pati.";
+    }
+  });
+});
+$("f-n-laisvas").addEventListener("input", e=>{
+  const v = parseInt(e.target.value,10);
+  if(v>0 && v<=200){ S.n = v; saugoti();
+    document.querySelectorAll("#seg-imtis button").forEach(b=>b.setAttribute("aria-pressed","false"));
+  }
+});
+$("f-ac").addEventListener("input", e=>{ S.ac = parseInt(e.target.value,10)||0; saugoti(); });
+$("f-re").addEventListener("input", e=>{ S.re = parseInt(e.target.value,10)||0; saugoti(); });
+
+$("btn-start").addEventListener("click", ()=>{
+  if(!S.inspektorius.trim()){
+    $("hint-insp").className = "hint warn";
+    $("hint-insp").textContent = "\u012era\u0161yk, kas atlieka patikr\u0105 \u2014 pavard\u0117 eina \u012f akt\u0105.";
+    $("f-insp").focus(); $("f-insp").scrollIntoView({block:"center",behavior:"smooth"}); return;
+  }
+  if(!S.objektas.trim()){
+    $("f-obj").focus(); $("f-obj").scrollIntoView({block:"center",behavior:"smooth"}); return;
+  }
+  if(!S.adresas.trim()){
+    $("f-adr").focus(); $("f-adr").scrollIntoView({block:"center",behavior:"smooth"}); return;
+  }
+  const pries = S.tv.length;
+  if(S.n < pries){
+    const prarasti = S.tv.slice(S.n).filter(t=>t.uzpildyta || t.pav).length;
+    if(prarasti && !confirm("Suma\u017einus imt\u012f i\u0161 akto dings jau u\u017epildyti TV (" +
+      prarasti + " vnt.) ir j\u0173 nuotraukos. T\u0119sti?")) return;
+    S.tv.slice(S.n).forEach(t=>t.foto.forEach(f=>fotoTrink(f.id)));
+  }
+  if(!S.pradeta) S.pradeta = new Date().toISOString();
+  while(S.tv.length < S.n) S.tv.push(tuscias());
+  S.tv.length = S.n;
+  if(S.n > pries) S.baigta = false;
+  if(cur >= S.n) cur = S.n - 1;
+  if(!S.pradeta || pries === 0) cur = 0;
+  saugoti(); rodyk(S.baigta ? "scr-sum" : "scr-tv");
+});
+
+$("btn-setup").addEventListener("click", ()=>{ piesSetup(); rodyk("scr-setup"); });
+
+/* ---------- TV ---------- */
+function zymek(){ const t=S.tv[cur]; if(!t.uzpildyta) t.uzpildyta = new Date().toISOString(); }
+
+function piesTV(){
+  const t = S.tv[cur];
+  $("tv-count").textContent = "TV " + (cur+1) + " i\u0161 " + S.n;
+
+  const ctx = $("tv-ctx"); ctx.innerHTML = "";
+  [["when",S.data],["who",S.inspektorius||"inspektorius nenurodytas"],
+   ["",S.objektas],["adr",S.adresas||"adresas nenurodytas"]].forEach(([kl,tx])=>{
+    const sp = document.createElement("span");
+    sp.className = (kl==="who"?"who":kl==="when"?"when":"") +
+      ((kl==="who"&&!S.inspektorius)||(kl==="adr"&&!S.adresas) ? " miss":"");
+    sp.textContent = tx; ctx.appendChild(sp);
+  });
+
+  if(!t.aukstas && !t.uzpildyta && cur>0 && S.tv[cur-1].aukstas){
+    t.aukstas = S.tv[cur-1].aukstas; saugoti();
+  }
+  $("f-aukstas").value = t.aukstas || "";
+  $("f-tvname").value = t.pav;
+  $("f-koment").value = t.koment;
+  document.querySelectorAll("#seg-laikas button").forEach(b=>
+    b.setAttribute("aria-pressed", String(b.dataset.v===t.laikas)));
+  document.querySelectorAll("#seg-tvtipas button").forEach(b=>
+    b.setAttribute("aria-pressed", String(b.dataset.v===t.tipas)));
+  segmentai($("seg-tvkl"), [1,2,3,4,5,6,7], t.klReik,
+    v=>{ t.klReik=v; zymek(); saugoti(); piesTV(); }, v=>"KL"+v);
+
+  const box = $("elems"); box.innerHTML = "";
+  ELEMENTAI[t.tipas].forEach(([grupe, elementai])=>{
+    const g = document.createElement("div"); g.className = "grp";
+    const h = document.createElement("div"); h.className = "grp-title"; h.textContent = grupe;
+    g.appendChild(h);
+    elementai.forEach(pav=>{
+      const key = grupe + "|" + pav;
+      if(!(key in t.ivert)) t.ivert[key] = 1;
+      const row = document.createElement("div");
+      row.className = "row" + (t.ivert[key]===0 ? " is-bad" : "");
+      const nm = document.createElement("div"); nm.className="row-name"; nm.textContent = pav;
+      const tri = document.createElement("div"); tri.className="tri";
+      [[1,"t1","\u2713","atitinka"],[0,"t0","\u2715","neatitinka"],[null,"tn","\u2013","netaikoma"]].forEach(([val,cls,sym,lab])=>{
+        const b = document.createElement("button");
+        b.type="button"; b.className=cls; b.textContent=sym;
+        b.setAttribute("aria-label", pav+": "+lab);
+        b.setAttribute("aria-pressed", String(t.ivert[key]===val));
+        b.addEventListener("click", ()=>{ t.ivert[key]=val; zymek(); saugoti(); piesTV(); });
+        tri.appendChild(b);
+      });
+      row.append(nm,tri); g.appendChild(row);
+
+      if(t.ivert[key]===0){
+        const d = document.createElement("div"); d.className="detail";
+        const inp = document.createElement("input");
+        inp.type="text"; inp.placeholder="Neatitikimo detalizavimas";
+        inp.value = t.detales[key] || "";
+        inp.addEventListener("input", e=>{ t.detales[key]=e.target.value; saugoti(); });
+        const fr = document.createElement("div"); fr.className="fotorow";
+        const fb = document.createElement("button");
+        fb.type="button"; fb.className="btn-foto"; fb.textContent="\u1f4f7 Nuotrauka";
+        fb.addEventListener("click", ()=>{ fotoTaikinys = {tv:cur, key:key}; $("fileinput").click(); });
+        const fc = document.createElement("span"); fc.className="fotocount";
+        const kiek = t.foto.filter(f=>f.key===key).length;
+        fc.textContent = kiek ? kiek + (kiek===1?" nuotrauka":kiek<10?" nuotraukos":" nuotrauk\u0173") : "";
+        fr.append(fb,fc);
+        const th = document.createElement("div"); th.className="thumbs";
+        piesThumbs(th, t.foto.filter(f=>f.key===key));
+        d.append(inp,fr,th); g.appendChild(d);
+      }
+    });
+    box.appendChild(g);
+  });
+
+  const s = tvSant(t);
+  $("tv-kl").textContent = "KL" + s.kl;
+  $("tv-pct").textContent = " \u00b7 " + lt(pct1(s.pct)) + " %";
+  $("tv-side").textContent = s.ok + " atitinka \u00b7 " + s.bad + " ne" +
+    (s.na ? " \u00b7 " + s.na + " netaikoma" : "") + " \u00b7 reikalaujama KL" + t.klReik;
+  const vd = $("tv-verdict");
+  vd.textContent = s.pass ? "Pasiektas" : "Nepasiektas";
+  vd.className = "verdict " + (s.pass ? "pass" : "fail");
+
+  const bendros = t.foto.filter(f=>!f.key);
+  $("fc-tv").textContent = bendros.length ? bendros.length + " vnt." : "";
+  piesThumbs($("th-tv"), bendros);
+
+  $("nav-name").textContent = tvVardas(t, cur);
+  $("nav-pos").textContent = (cur+1) + " / " + S.n;
+  $("btn-prev").disabled = (cur===0);
+  $("btn-next").textContent = (cur === S.n-1) ? "Ataskaita" : "\u203a";
+  virsus();
+}
+function piesThumbs(el, sarasas){
+  el.innerHTML = "";
+  sarasas.forEach(f=>{
+    const d = document.createElement("div"); d.className="thumb";
+    const img = document.createElement("img"); img.alt = "Fotofiksacija " + hhmm(f.laikas);
+    fotoSkaityk(f.id).then(u=>{ if(u) img.src = u; });
+    const x = document.createElement("button");
+    x.type="button"; x.textContent="\u2715"; x.title="I\u0161trinti nuotrauk\u0105";
+    x.setAttribute("aria-label","I\u0161trinti nuotrauk\u0105");
+    x.addEventListener("click", ()=>{
+      const t = S.tv[cur];
+      t.foto = t.foto.filter(z=>z.id!==f.id);
+      fotoTrink(f.id); saugoti(); piesTV();
+    });
+    d.append(img,x); el.appendChild(d);
+  });
+}
+$("fileinput").addEventListener("change", async e=>{
+  const failai = [...e.target.files];
+  e.target.value = "";
+  if(!failai.length || !fotoTaikinys) return;
+  const t = S.tv[fotoTaikinys.tv];
+  for(const f of failai){
+    try{
+      const url = await sumazink(f);
+      const id = "f" + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+      const ok = await fotoRasyk(id, url);
+      if(!ok){ alert("Nuotraukos i\u0161saugoti nepavyko \u2014 telefone tr\u016bksta vietos."); break; }
+      t.foto.push({ id:id, key:fotoTaikinys.key, laikas:new Date().toISOString() });
+      if(!t.uzpildyta) t.uzpildyta = new Date().toISOString();
+    }catch(err){ alert("\u0160ios nuotraukos apdoroti nepavyko."); }
+  }
+  fotoTaikinys = null; saugoti();
+  if(ekranas==="scr-tv") piesTV(); else piesSuvestine();
+});
+$("btn-foto-tv").addEventListener("click", ()=>{
+  fotoTaikinys = {tv:cur, key:null}; $("fileinput").click();
+});
+$("f-tvname").addEventListener("input", e=>{
+  S.tv[cur].pav = e.target.value; zymek(); saugoti();
+  $("nav-name").textContent = tvVardas(S.tv[cur], cur);
+});
+$("f-aukstas").addEventListener("input", e=>{
+  S.tv[cur].aukstas = e.target.value; zymek(); saugoti();
+  $("nav-name").textContent = tvVardas(S.tv[cur], cur);
+});
+$("f-koment").addEventListener("input", e=>{ S.tv[cur].koment = e.target.value; saugoti(); });
+document.querySelectorAll("#seg-laikas button").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    S.tv[cur].laikas = b.dataset.v; zymek(); saugoti();
+    document.querySelectorAll("#seg-laikas button").forEach(x=>
+      x.setAttribute("aria-pressed", String(x===b)));
+  });
+});
+document.querySelectorAll("#seg-tvtipas button").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    const t = S.tv[cur];
+    if(t.tipas === b.dataset.v) return;
+    t.tipas = b.dataset.v;
+    t.ivert = {}; t.detales = {};
+    if(t.tipas === "teritorijos" && t.klReik === 4) t.klReik = 5;
+    if(t.tipas === "vidaus" && t.klReik === 5) t.klReik = 4;
+    zymek(); saugoti(); piesTV();
+  });
+});
+$("btn-prev").addEventListener("click", ()=>{
+  if(ekranas==="scr-sum"){ cur = S.n-1; rodyk("scr-tv"); return; }
+  if(cur>0){ cur--; piesTV(); window.scrollTo(0,0); }
+});
+$("btn-next").addEventListener("click", ()=>{
+  if(ekranas==="scr-sum") return;
+  if(cur < S.n-1){ cur++; piesTV(); window.scrollTo(0,0); }
+  else { S.baigta = true; saugoti(); rodyk("scr-sum"); if(db) sinchronizuoti(true); }
+});
+
+/* ---------- suvestin\u0117 ---------- */
+function piesSuvestine(){
+  const a = auditSant();
+  $("sum-title").textContent = S.adresas || "Ataskaita";
+  $("sum-sub").textContent = tipuSantrauka() +
+    " \u00b7 " + S.objektas + " \u00b7 " + S.data +
+    (S.inspektorius ? " \u00b7 " + S.inspektorius : "") + " \u00b7 imtis n=" + S.n;
+
+  $("s-evq").textContent = lt(pct1(a.evqPct)) + " %";
+  $("s-evqsub").textContent = "vidurkis i\u0161 " + S.n + " TV \u00b7 KL" + a.evqKl;
+  $("s-elem").textContent = lt(pct1(a.elemPct)) + " %";
+  $("s-elemsub").textContent = a.eOk + " i\u0161 " + a.eVis + " vertint\u0173 element\u0173";
+  $("s-ok").textContent = a.atit;
+  $("s-oksub").textContent = "i\u0161 " + S.n + " tikrint\u0173 TV";
+  $("s-bad").textContent = a.neat;
+  $("s-acre").textContent = "Ac " + S.ac + " \u00b7 Re " + S.re + " \u00b7 AQL 6,5 %";
+
+  const vd = $("s-verdict");
+  vd.textContent = a.priimtina ? "Priimtina" : "Nepriimtina";
+  vd.className = "verdict " + (a.priimtina ? "pass" : "fail");
+  $("s-final").textContent = a.priimtina
+    ? "Neatitinkan\u010di\u0173 TV " + a.neat + " \u2264 Ac " + S.ac + ". Minimalus priimtinas kokyb\u0117s lygis (PKL) atitinka reikalavimus."
+    : "Neatitinkan\u010di\u0173 TV " + a.neat + " \u2265 Re " + S.re + ". Minimalus priimtinas kokyb\u0117s lygis (PKL) neatitinka reikalavim\u0173.";
+
+  const gb = $("s-grupes"); gb.innerHTML = "";
+  grupiuKokybe().forEach(g=>{
+    const tr = document.createElement("tr");
+    const td1 = document.createElement("td");
+    td1.textContent = g.grupe;
+    const bar = document.createElement("div"); bar.className="bar";
+    const bi = document.createElement("i");
+    bi.style.width = g.pct + "%"; if(g.pct < 75) bi.className = "low";
+    bar.appendChild(bi); td1.appendChild(bar);
+    const td2 = document.createElement("td"); td2.className="n"; td2.textContent = g.ok+"/"+g.vis;
+    const td3 = document.createElement("td");
+    td3.className = "n" + (g.pct<75?" bad":""); td3.textContent = lt(pct1(g.pct))+" %";
+    tr.append(td1,td2,td3); gb.appendChild(tr);
+  });
+
+  const kb = $("s-kldist"); kb.innerHTML = "";
+  const dist = klPasiskirstymas();
+  for(let i=7;i>=0;i--){
+    const tr = document.createElement("tr");
+    const a1 = document.createElement("td");
+    a1.textContent = "KL" + i + (i===7?" (100 %)":i===6?" (90\u201399 %)":i===5?" (80\u201389 %)":
+      i===4?" (75\u201379 %)":i===3?" (65\u201374 %)":i===2?" (50\u201364 %)":i===1?" (20\u201349 %)":" (<20 %)");
+    const a2 = document.createElement("td"); a2.className="n"; a2.textContent = dist[i];
+    tr.append(a1,a2); kb.appendChild(tr);
+  }
+
+  const ul = $("s-list"); ul.innerHTML = "";
+  S.tv.forEach((t,i)=>{
+    const s = a.r[i];
+    const li = document.createElement("li");
+    const idx = document.createElement("span"); idx.className="idx"; idx.textContent=(i+1)+".";
+    const nm = document.createElement("span"); nm.className="nm";
+    nm.textContent = tvVardas(t,i) + (t.foto.length ? "  \u1f4f7"+t.foto.length : "");
+    const kl = document.createElement("span"); kl.className="kl"+(s.pass?"":" bad");
+    kl.textContent = lt(pct1(s.pct)) + " %  KL" + s.kl + "/" + t.klReik;
+    const jb = document.createElement("button"); jb.className="jump"; jb.type="button"; jb.textContent="Taisyti";
+    jb.addEventListener("click", ()=>{ cur=i; rodyk("scr-tv"); });
+    li.append(idx,nm,kl,jb); ul.appendChild(li);
+  });
+
+  const nkt = $("s-nkt"); nkt.innerHTML = ""; let yra = false;
+  S.tv.forEach((t,i)=>{
+    const bl = blogi(t);
+    if(!bl.length && !t.koment && !t.foto.length) return;
+    yra = true;
+    const d = document.createElement("div"); d.className="nkt";
+    const nm = document.createElement("b"); nm.textContent = (i+1)+". "+tvVardas(t,i);
+    d.appendChild(nm);
+    bl.forEach(k=>{
+      d.appendChild(document.createTextNode("\u00b7 " + k.split("|")[1] +
+        (t.detales[k] ? " \u2014 " + t.detales[k] : "")));
+      d.appendChild(document.createElement("br"));
+    });
+    if(t.koment) d.appendChild(document.createTextNode("Komentaras: " + t.koment));
+    if(t.foto.length){
+      const th = document.createElement("div"); th.className="thumbs";
+      t.foto.forEach(f=>{
+        const w = document.createElement("div"); w.className="thumb";
+        const img = document.createElement("img"); img.alt="Fotofiksacija";
+        fotoSkaityk(f.id).then(u=>{ if(u) img.src=u; });
+        w.appendChild(img); th.appendChild(w);
+      });
+      d.appendChild(th);
+    }
+    nkt.appendChild(d);
+  });
+  $("p-nkt").hidden = !yra;
+
+  $("nav-name").textContent = "Ataskaita";
+  $("nav-pos").textContent = S.n + " TV \u00b7 " + a.foto + " nuotr.";
+  $("btn-prev").disabled = false;
+  $("btn-next").textContent = "\u2713";
+  $("btn-next").disabled = true;
+  spMygtukas();
+  virsus();
+}
+
+/* ---------- tekstin\u0117 lentel\u0117 ---------- */
+const TAB = String.fromCharCode(9);
+function tekstas(){
+  const a = auditSant(), L = [];
+  const eil = arr => L.push(arr.join(TAB));
+  L.push("VALYMO PASLAUG\u0172 KOKYB\u0116S ATITIKTIES REIKALAVIMAMS \u012eVERTINIMO AKTAS");
+  eil(["Tiek\u0117jas", 'UAB "Vitaresta"']);
+  eil(["U\u017esakovas / objektas", S.objektas]);
+  eil(["Adresas", S.adresas]);
+  eil(["Patikros sud\u0117tis", tipuSantrauka()]);
+  eil(["Audito data", S.data]);
+  eil(["Inspektorius", S.inspektorius]);
+  eil(["Imties dydis (n)", S.n]);
+  eil(["Taikomas AQL", "6,5 %"]);
+  eil(["Priimtinumo skai\u010dius (Ac)", S.ac]);
+  eil(["Atmetimo skai\u010dius (Re)", S.re]);
+  eil(["Einamoji kokyb\u0117 (EVQ)", lt(pct1(a.evqPct))+" %"]);
+  eil(["EVQ kokyb\u0117s lygis", "KL"+a.evqKl]);
+  eil(["Element\u0173 atitiktis", lt(pct1(a.elemPct))+" %  ("+a.eOk+"/"+a.eVis+")"]);
+  eil(["TV atitinka reikalaujam\u0105 KL", a.atit]);
+  eil(["TV neatitinka", a.neat]);
+  eil(["Fotofiksacij\u0173", a.foto]);
+  eil(["I\u0161vada", a.priimtina ? "priimtina" : "nepriimtina"]);
+  eil(["Suvestin\u0117 sugeneruota", siandien()+" "+hhmm(new Date().toISOString())]);
+
+  L.push(""); L.push("ELEMENT\u0172 GRUPI\u0172 VALYMO KOKYB\u0116");
+  eil(["Grup\u0117","Atitinka","Vertinta","Kokyb\u0117 %"]);
+  grupiuKokybe().forEach(g=> eil([g.grupe, g.ok, g.vis, lt(pct1(g.pct))]));
+
+  L.push(""); L.push("TV KOKYB\u0116S LYGI\u0172 PASISKIRSTYMAS");
+  eil(["Kokyb\u0117s lygis","TV skai\u010dius"]);
+  const dist = klPasiskirstymas();
+  for(let i=7;i>=0;i--) eil(["KL"+i, dist[i]]);
+
+  L.push(""); L.push("TIKRINAMI VIENETAI");
+  eil(["Nr.","Auk\u0161tas","Patalpa / zona","Tipas","U\u017epildyta","Atitinka","Neatitinka",
+       "Netaikoma","Dalis","Procentai","KL","Reikalauta KL","Pasiektas","Foto"]);
+  S.tv.forEach((t,i)=>{
+    const s = a.r[i];
+    eil([i+1, t.aukstas||"", t.pav||"", t.tipas==="vidaus"?"vidaus":"lauko",
+         t.uzpildyta?hhmm(t.uzpildyta):"", s.ok, s.bad, s.na,
+         s.dalis.toFixed(4), lt(pct1(s.pct)), "KL"+s.kl, "KL"+t.klReik,
+         s.pass?"TAIP":"NE", t.foto.length]);
+  });
+
+  const nk = [];
+  S.tv.forEach((t,i)=>{
+    blogi(t).forEach(k=>{
+      const kiek = t.foto.filter(f=>f.key===k).length;
+      nk.push([i+1, tvVardas(t,i), k.split("|")[0], k.split("|")[1],
+               t.detales[k]||"", kiek].join(TAB));
+    });
+  });
+  if(nk.length){
+    L.push(""); L.push("NEATITIKIMAI");
+    eil(["TV Nr.","TV","Grup\u0117","Elementas","Detalizavimas","Foto"]);
+    L.push(...nk);
+  }
+  return L.join("\n");
+}
+$("btn-copy").addEventListener("click", async ()=>{
+  const b = $("btn-copy"), t = tekstas();
+  try{ await navigator.clipboard.writeText(t); b.textContent = "Nukopijuota"; }
+  catch(e){
+    const ta = document.createElement("textarea");
+    ta.value=t; ta.style.position="fixed"; ta.style.opacity="0";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); b.textContent="Nukopijuota"; }
+    catch(e2){ b.textContent="Nepavyko"; }
+    ta.remove();
+  }
+  setTimeout(()=>{ b.textContent="Kopijuoti"; }, 2200);
+});
+
+$("btn-new").addEventListener("click", ()=>{
+  if(!confirm("Prad\u0117ti nauj\u0105 patikr\u0105? Dabartiniai duomenys ir nuotraukos bus i\u0161trinti i\u0161 telefono.")) return;
+  fotoValyk();
+  S = naujas(); cur = 0; saugoti();
+  $("resume-hint").hidden = true;
+  piesSetup(); rodyk("scr-setup");
+});
+
+/* ---------- spausdinama ataskaita (PDF) ---------- */
+function esc(s){
+  return String(s === null || s === undefined ? "" : s)
+    .replace(/[&<>"]/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];
+    });
+}
+function tipoVardas(t){ return t === "vidaus" ? "vidaus" : "lauko"; }
+
+async function piesSpaudai(){
+  const a = auditSant();
+  /* nuotraukos is telefono saugyklos */
+  const nuotr = new Map();
+  for(const t of S.tv){
+    for(const f of t.foto){
+      const u = await fotoSkaityk(f.id);
+      if(u) nuotr.set(f.id, u);
+    }
+  }
+
+  const L = [];
+  const eil = (k, v) => L.push("<tr><td>" + esc(k) + "</td><td>" + esc(v) + "</td></tr>");
+
+  L.push("<h1>Valymo paslaug\u0173 kokyb\u0117s atitikties reikalavimams \u012fvertinimo aktas</h1>");
+
+  L.push('<table class="meta"><tbody>');
+  eil("Tiek\u0117jas", 'UAB "Vitaresta"');
+  eil("U\u017esakovas / objektas", S.objektas);
+  eil("Adresas", S.adresas);
+  eil("Patikros sud\u0117tis", tipuSantrauka());
+  eil("Audito data", S.data);
+  eil("Inspektorius", S.inspektorius);
+  eil("Imties dydis (n)", S.n);
+  eil("Taikomas AQL", "6,5 %");
+  eil("Priimtinumo skai\u010dius (Ac)", S.ac);
+  eil("Atmetimo skai\u010dius (Re)", S.re);
+  L.push("</tbody></table>");
+
+  L.push("<h2>\u012evertinimo rezultatai</h2>");
+  L.push('<table class="meta"><tbody>');
+  eil("Einamoji kokyb\u0117 (EVQ)", lt(pct1(a.evqPct)) + " %  (KL" + a.evqKl + ")");
+  eil("Element\u0173 atitiktis", lt(pct1(a.elemPct)) + " %  (" + a.eOk + " i\u0161 " + a.eVis + ")");
+  eil("TV atitinka reikalaujam\u0105 kokyb\u0117s lyg\u012f", a.atit + " i\u0161 " + S.n);
+  eil("TV neatitinka", a.neat);
+  eil("Fotofiksacij\u0173", a.foto);
+  L.push("</tbody></table>");
+  L.push('<p class="isvada">I\u0161vada: ' + (a.priimtina
+    ? "priimtina. Neatitinkan\u010di\u0173 TV " + a.neat + " nevir\u0161ija priimtinumo skai\u010diaus Ac " + S.ac + "."
+    : "nepriimtina. Neatitinkan\u010di\u0173 TV " + a.neat + " pasiekia atmetimo skai\u010di\u0173 Re " + S.re + ".") + "</p>");
+
+  L.push("<h2>Element\u0173 grupi\u0173 valymo kokyb\u0117</h2>");
+  L.push('<table><thead><tr><th>Grup\u0117</th><th class="n">Atitinka</th><th class="n">Vertinta</th><th class="n">Kokyb\u0117</th></tr></thead><tbody>');
+  grupiuKokybe().forEach(g => {
+    L.push("<tr><td>" + esc(g.grupe) + '</td><td class="n">' + g.ok +
+           '</td><td class="n">' + g.vis + '</td><td class="n">' + lt(pct1(g.pct)) + " %</td></tr>");
+  });
+  L.push("</tbody></table>");
+
+  L.push("<h2>Tikrinam\u0173 vienet\u0173 kokyb\u0117s lygi\u0173 pasiskirstymas</h2>");
+  const dist = klPasiskirstymas();
+  L.push('<table><thead><tr><th>Kokyb\u0117s lygis</th><th class="n">TV skai\u010dius</th></tr></thead><tbody>');
+  for(let i = 7; i >= 0; i--){
+    if(!dist[i]) continue;
+    L.push("<tr><td>KL" + i + "</td><td class=\"n\">" + dist[i] + "</td></tr>");
+  }
+  L.push("</tbody></table>");
+
+  L.push("<h2>Tikrinami vienetai</h2>");
+  L.push('<table><thead><tr><th class="n">Nr.</th><th>Auk\u0161tas</th><th>Patalpa / zona</th><th>Tipas</th>' +
+         '<th class="n">Atit.</th><th class="n">Neat.</th><th class="n">Netaik.</th>' +
+         '<th class="n">Kokyb\u0117</th><th class="n">KL</th><th class="n">Reikalauta</th><th>Pasiektas</th></tr></thead><tbody>');
+  S.tv.forEach((t, i) => {
+    const s = a.r[i];
+    L.push("<tr><td class=\"n\">" + (i + 1) + "</td><td>" + esc(t.aukstas) + "</td><td>" + esc(t.pav) +
+      "</td><td>" + tipoVardas(t.tipas) + '</td><td class="n">' + s.ok + '</td><td class="n">' + s.bad +
+      '</td><td class="n">' + s.na + '</td><td class="n">' + lt(pct1(s.pct)) + ' %</td><td class="n">KL' + s.kl +
+      '</td><td class="n">KL' + t.klReik + "</td><td" + (s.pass ? "" : ' class="bad"') + ">" +
+      (s.pass ? "taip" : "NE") + "</td></tr>");
+  });
+  L.push("</tbody></table>");
+
+  /* neatitikimai su nuotraukomis */
+  const dalys = [];
+  S.tv.forEach((t, i) => {
+    const bl = blogi(t);
+    const bendros = t.foto.filter(f => !f.key);
+    if(!bl.length && !t.koment && !t.foto.length) return;
+    const d = [];
+    d.push('<div class="nkt"><b>' + esc((i + 1) + ". " + tvVardas(t, i)) + "</b>");
+    if(bl.length){
+      d.push("<ul>");
+      bl.forEach(k => {
+        const fotoK = t.foto.filter(f => f.key === k);
+        d.push("<li>" + esc(k.split("|")[0]) + " &mdash; " + esc(k.split("|")[1]) +
+               (t.detales[k] ? ": " + esc(t.detales[k]) : "") + "</li>");
+        fotoK.forEach(f => { if(nuotr.has(f.id)) d.push('<div class="fotos"><figure><img src="' +
+          nuotr.get(f.id) + '"><figcaption>' + esc(k.split("|")[1]) + ", " + hhmm(f.laikas) +
+          "</figcaption></figure></div>"); });
+      });
+      d.push("</ul>");
+    }
+    if(t.koment) d.push("<div>Komentaras: " + esc(t.koment) + "</div>");
+    if(bendros.length){
+      d.push('<div class="fotos">');
+      bendros.forEach(f => { if(nuotr.has(f.id)) d.push('<figure><img src="' + nuotr.get(f.id) +
+        '"><figcaption>bendra nuotrauka, ' + hhmm(f.laikas) + "</figcaption></figure>"); });
+      d.push("</div>");
+    }
+    d.push("</div>");
+    dalys.push(d.join(""));
+  });
+  if(dalys.length){
+    L.push("<h2>Neatitikimai ir fotofiksacijos</h2>");
+    L.push(dalys.join(""));
+  }
+
+  L.push('<div class="parasai"><div>Inspektorius: ' + esc(S.inspektorius) +
+         "<br>para\u0161as, data</div><div>U\u017esakovo atstovas:<br>vardas, pavard\u0117, para\u0161as, data</div></div>");
+  L.push('<p class="kojene">Vertinta pagal LST EN 13549. Imtis ir priimtinumo skai\u010diai &mdash; pagal ISO 2859-1, AQL 6,5 %. Aktas suformuotas ' +
+         siandien() + " " + hhmm(new Date().toISOString()) + ".</p>");
+
+  document.getElementById("print").innerHTML = L.join("");
+
+  /* palaukti, kol nuotraukos issipiesia */
+  const imgs = [...document.querySelectorAll("#print img")];
+  await Promise.all(imgs.map(im => im.complete ? null :
+    new Promise(r => { im.onload = r; im.onerror = r; })));
+}
+
+$("btn-pdf").addEventListener("click", async () => {
+  const b = $("btn-pdf");
+  b.disabled = true; b.textContent = "Ruo\u0161iama\u2026";
+  try{
+    await piesSpaudai();
+    await new Promise(r => setTimeout(r, 150));
+    window.print();
+  }catch(e){
+    alert("Ataskaitos paruo\u0161ti nepavyko.");
+  }
+  b.disabled = false; b.textContent = "Spausdinti";
+});
+
+/* ---------- PDF failas ir siuntimas i SharePoint ---------- */
+/* PDF kuriamas pačiame telefone; siunčiamas per telefono dalinimosi langą,
+   o jei jo nėra — išsaugomas telefone ir įkeliamas ranka */
+let pdfVer = 0, paruostas = null, dl = null;
+const PT = "Plex";
+function failoVardas(){
+  const v = ("KK aktas " + (S.objektas || S.adresas || "objektas") + " " + S.data)
+    .replace(/[\\/:*?"<>|#%]+/g, " ").replace(/\s+/g, " ").trim().slice(0, 120);
+  return v + ".pdf";
+}
+function imgDydis(url){
+  return new Promise(r=>{
+    const i = new Image();
+    i.onload = ()=>r([i.naturalWidth, i.naturalHeight]);
+    i.onerror = ()=>r(null);
+    i.src = url;
+  });
+}
+
+async function kurkPdf(){
+  const J = window.jspdf && window.jspdf.jsPDF;
+  if(!J) throw {code:"nera_bibliotekos"};
+  const doc = new J({unit:"mm", format:"a4", compress:true});
+  if(typeof doc.autoTable !== "function") throw {code:"nera_bibliotekos"};
+  doc.addFileToVFS("Plex-R.ttf", PLEX_R); doc.addFont("Plex-R.ttf", PT, "normal");
+  doc.addFileToVFS("Plex-B.ttf", PLEX_B); doc.addFont("Plex-B.ttf", PT, "bold");
+  doc.setFont(PT, "normal");
+
+  const a = auditSant();
+  const PW = 210, PH = 297, M = 15, W = PW - 2*M, APACIA = PH - 18;
+  const EIL = pt => pt * 0.3528 * 1.15;           /* eilutės aukštis mm */
+  let y = M;
+  const nauja = h => { if(y + h > APACIA){ doc.addPage(); y = M; } };
+  const lent = opts => {
+    doc.autoTable(Object.assign({
+      startY: y, theme: "grid",
+      margin: {left:M, right:M, top:M, bottom:20},
+      styles: {font:PT, fontStyle:"normal", fontSize:8.5, cellPadding:1.4,
+               lineColor:[138,138,138], lineWidth:0.2, textColor:[0,0,0], valign:"top"},
+      headStyles: {font:PT, fontStyle:"bold", fillColor:[232,232,232], textColor:[0,0,0]}
+    }, opts));
+    y = doc.lastAutoTable.finalY;
+  };
+  const antraste = (t, po) => {
+    nauja(10 + (po || 10)); y += 7;
+    doc.setFont(PT, "bold"); doc.setFontSize(10.5); doc.text(t, M, y);
+    y += 1.6; doc.setDrawColor(0); doc.setLineWidth(0.3); doc.line(M, y, PW - M, y); y += 2.4;
+    doc.setFont(PT, "normal");
+  };
+  const meta = rows => lent({
+    body: rows.map(([k,v]) => [k, v === null || v === undefined ? "" : String(v)]),
+    columnStyles: {0: {cellWidth: W*0.44, fontStyle:"bold"}}
+  });
+  const rasyk = (t, dydis, stor, x0) => {
+    doc.setFont(PT, stor ? "bold" : "normal"); doc.setFontSize(dydis);
+    const x = x0 || M;
+    const ls = doc.splitTextToSize(t, PW - M - x);
+    ls.forEach(l => { nauja(EIL(dydis) + 1); y += EIL(dydis); doc.text(l, x, y); });
+    doc.setFont(PT, "normal");
+  };
+  const nuotr = new Map();
+  for(const t of S.tv) for(const f of t.foto){
+    const u = await fotoSkaityk(f.id);
+    if(!u) continue;
+    const d = await imgDydis(u);
+    if(d) nuotr.set(f.id, {u, w:d[0], h:d[1]});
+  }
+  /* nuotraukos po tris eilutėje */
+  const fotos = (sar, parasas) => {
+    const buvo = sar.filter(f => nuotr.has(f.id));
+    const FW = 56, TARP = 5;
+    for(let i = 0; i < buvo.length; i += 3){
+      const eil = buvo.slice(i, i+3).map(f => {
+        const n = nuotr.get(f.id);
+        return {f, n, h: Math.min(FW * n.h / n.w, 72)};
+      });
+      const eh = Math.max(...eil.map(e => e.h)) + 6;
+      y += 2; nauja(eh);
+      eil.forEach((e, j) => {
+        const x = M + j * (FW + TARP);
+        const fw = e.h < 72 ? FW : 72 * e.n.w / e.n.h;
+        doc.addImage(e.n.u, "JPEG", x, y, fw, e.h, undefined, "FAST");
+        doc.setDrawColor(138); doc.setLineWidth(0.2); doc.rect(x, y, fw, e.h);
+        doc.setFontSize(7); doc.setTextColor(60);
+        doc.text(doc.splitTextToSize(parasas(e.f), FW)[0], x, y + e.h + 3.4);
+        doc.setTextColor(0);
+      });
+      y += eh;
+    }
+  };
+
+  /* antraštė */
+  doc.setFont(PT, "bold"); doc.setFontSize(13);
+  const tl = doc.splitTextToSize("Valymo paslaugų kokybės atitikties reikalavimams įvertinimo aktas", W - 20);
+  y += 4; doc.text(tl, PW/2, y, {align:"center"}); y += (tl.length - 1) * EIL(13) + 5;
+  doc.setFont(PT, "normal");
+
+  meta([
+    ["Tiekėjas", 'UAB "Vitaresta"'],
+    ["Užsakovas / objektas", S.objektas],
+    ["Adresas", S.adresas],
+    ["Patikros sudėtis", tipuSantrauka()],
+    ["Audito data", S.data],
+    ["Inspektorius", S.inspektorius],
+    ["Imties dydis (n)", S.n],
+    ["Taikomas AQL", "6,5 %"],
+    ["Priimtinumo skaičius (Ac)", S.ac],
+    ["Atmetimo skaičius (Re)", S.re]
+  ]);
+
+  antraste("Įvertinimo rezultatai");
+  meta([
+    ["Einamoji kokybė (EVQ)", lt(pct1(a.evqPct)) + " %  (KL" + a.evqKl + ")"],
+    ["Elementų atitiktis", lt(pct1(a.elemPct)) + " %  (" + a.eOk + " iš " + a.eVis + ")"],
+    ["TV atitinka reikalaujamą kokybės lygį", a.atit + " iš " + S.n],
+    ["TV neatitinka", a.neat],
+    ["Fotofiksacijų", a.foto]
+  ]);
+  const isv = "Išvada: " + (a.priimtina
+    ? "priimtina. Neatitinkančių TV " + a.neat + " neviršija priimtinumo skaičiaus Ac " + S.ac + "."
+    : "nepriimtina. Neatitinkančių TV " + a.neat + " pasiekia atmetimo skaičių Re " + S.re + ".");
+  doc.setFont(PT, "bold"); doc.setFontSize(9.5);
+  const il = doc.splitTextToSize(isv, W - 6);
+  const ih = (il.length - 1) * EIL(9.5) + 7;
+  y += 4; nauja(ih);
+  doc.setDrawColor(0); doc.setLineWidth(0.5); doc.rect(M, y, W, ih);
+  doc.text(il, M + 3, y + 4.6);
+  doc.setFont(PT, "normal"); y += ih;
+
+  antraste("Elementų grupių valymo kokybė");
+  const R = {halign:"right"};
+  lent({
+    head: [["Grupė", "Atitinka", "Vertinta", "Kokybė"]],
+    body: grupiuKokybe().map(g => [g.grupe, g.ok, g.vis, lt(pct1(g.pct)) + " %"]),
+    columnStyles: {1:R, 2:R, 3:R},
+    didParseCell: d => { if(d.section === "head" && d.column.index > 0) d.cell.styles.halign = "right"; }
+  });
+
+  antraste("Tikrinamų vienetų kokybės lygių pasiskirstymas");
+  const dist = klPasiskirstymas(), kr = [];
+  for(let i = 7; i >= 0; i--) if(dist[i]) kr.push(["KL" + i, dist[i]]);
+  lent({
+    head: [["Kokybės lygis", "TV skaičius"]], body: kr,
+    columnStyles: {1:R},
+    didParseCell: d => { if(d.section === "head" && d.column.index === 1) d.cell.styles.halign = "right"; }
+  });
+
+  antraste("Tikrinami vienetai", 20);
+  lent({
+    head: [["Nr.", "Aukštas", "Patalpa / zona", "Tipas", "Atit.", "Neat.", "Netaik.", "Kokybė", "KL", "Reikal.", "Pasiektas"]],
+    body: S.tv.map((t, i) => {
+      const s = a.r[i];
+      return [i + 1, t.aukstas || "", t.pav || "", tipoVardas(t.tipas), s.ok, s.bad, s.na,
+              lt(pct1(s.pct)) + " %", "KL" + s.kl, "KL" + t.klReik, s.pass ? "taip" : "NE"];
+    }),
+    styles: {font:PT, fontSize:7.5, cellPadding:1.2, lineColor:[138,138,138], lineWidth:0.2, textColor:[0,0,0]},
+    headStyles: {font:PT, fontStyle:"bold", fontSize:7.5, fillColor:[232,232,232], textColor:[0,0,0]},
+    columnStyles: {0:R, 4:R, 5:R, 6:R, 7:R, 8:R, 9:R},
+    didParseCell: d => {
+      if(d.section === "body" && d.column.index === 10 && d.cell.raw === "NE"){
+        d.cell.styles.fontStyle = "bold"; d.cell.styles.textColor = [168,50,28];
+      }
+    }
+  });
+
+  /* neatitikimai su nuotraukomis */
+  const turi = S.tv.map((t, i) => [t, i]).filter(([t]) => blogi(t).length || t.koment || t.foto.length);
+  if(turi.length){
+    antraste("Neatitikimai ir fotofiksacijos", 60);
+    turi.forEach(([t, i]) => {
+      nauja(14); y += 3;
+      rasyk((i + 1) + ". " + tvVardas(t, i), 9.5, true);
+      blogi(t).forEach(k => {
+        const [g, el] = k.split("|");
+        rasyk("• " + g + " – " + el + (t.detales[k] ? ": " + t.detales[k] : ""), 8.5, false, M + 3);
+        fotos(t.foto.filter(f => f.key === k), f => el + ", " + hhmm(f.laikas));
+      });
+      if(t.koment) rasyk("Komentaras: " + t.koment, 8.5, false, M + 3);
+      fotos(t.foto.filter(f => !f.key), f => "bendra nuotrauka, " + hhmm(f.laikas));
+      y += 2; doc.setDrawColor(170); doc.setLineWidth(0.15); doc.setLineDashPattern([0.6, 0.8], 0);
+      doc.line(M, y, PW - M, y); doc.setLineDashPattern([], 0);
+    });
+  }
+
+  /* parašai */
+  nauja(28); y += 20;
+  const PWD = (W - 14) / 2;
+  doc.setDrawColor(0); doc.setLineWidth(0.3);
+  doc.line(M, y, M + PWD, y); doc.line(M + PWD + 14, y, PW - M, y);
+  doc.setFontSize(8.5);
+  doc.text(["Inspektorius: " + S.inspektorius, "parašas, data"], M, y + 4);
+  doc.text(["Užsakovo atstovas:", "vardas, pavardė, parašas, data"], M + PWD + 14, y + 4);
+
+  /* poraste kiekviename puslapyje */
+  const kada = siandien() + " " + hhmm(new Date().toISOString());
+  const psl = doc.getNumberOfPages();
+  for(let p = 1; p <= psl; p++){
+    doc.setPage(p);
+    doc.setFont(PT, "normal"); doc.setFontSize(7); doc.setTextColor(90);
+    doc.text("Vertinta pagal LST EN 13549. Imtis ir priimtinumo skaičiai pagal ISO 2859-1, AQL 6,5 %. Aktas suformuotas " + kada + ".", M, PH - 9);
+    doc.text(p + " / " + psl, PW - M, PH - 9, {align:"right"});
+    doc.setTextColor(0);
+  }
+  return doc.output("blob");
+}
+
+function spZinute(t, blogai){
+  const m = $("sp-msg"); m.textContent = t; m.className = blogai ? "warn" : "";
+}
+/* jei po paruošimo duomenys pasikeitė, PDF reikia paruošti iš naujo */
+function spMygtukas(){
+  const b = $("btn-sp");
+  if(paruostas && paruostas.ver !== pdfVer){
+    paruostas = null;
+    spZinute("Aktas pasikeitė, PDF reikia paruošti iš naujo.");
+    $("sp-kelias").hidden = true;
+  }
+  b.textContent = paruostas ? "Siųsti ›" : "Paruošti PDF";
+}
+$("btn-sp").addEventListener("click", async ()=>{
+  const b = $("btn-sp");
+  spMygtukas();
+  if(!paruostas){
+    b.disabled = true; b.textContent = "Ruošiama…";
+    try{
+      const blob = await kurkPdf();
+      paruostas = {blob, name: failoVardas(), ver: pdfVer};
+      spZinute("PDF paruoštas (" + Math.max(1, Math.round(blob.size/1024)) + " KB). Spausk „Siųsti“.");
+      $("sp-kelias").hidden = false;
+    }catch(e){
+      console.warn(e);
+      spZinute(e && e.code === "nera_bibliotekos"
+        ? "PDF kūrimui reikia interneto. Prisijunk ir bandyk dar kartą."
+        : "PDF paruošti nepavyko.", true);
+    }
+    b.disabled = false; spMygtukas();
+    return;
+  }
+
+  const {blob, name} = paruostas;
+  /* 1. telefono dalinimosi langas: SharePoint, OneDrive, Teams */
+  if(navigator.share && navigator.canShare){
+    const failas = new File([blob], name, {type:"application/pdf"});
+    let gali = false;
+    try{ gali = navigator.canShare({files:[failas]}); }catch(e){}
+    if(gali){
+      try{
+        await navigator.share({files:[failas], title:name});
+        spZinute("Išsiųsta: " + name + ". Patikrink, ar failas atsirado objekto aplanke.");
+        return;
+      }catch(e){
+        if(e && e.name === "AbortError"){ spZinute("Siuntimas atšauktas. Galima bandyti dar kartą."); return; }
+        /* kitos klaidos — bandom išsaugoti */
+      }
+    }
+  }
+  /* 2. išsaugoti telefone (Claude programėlėje atsidaro dalinimosi langas) */
+  if(dl){
+    try{
+      await dl.save({filename:name, data:blob});
+      spZinute("PDF išsaugotas. Jei dalinimosi langas neatsidarė, atidaryk SharePoint programėlę ir įkelk failą į objekto aplanką.");
+    }catch(e){
+      const c = e && e.code;
+      spZinute(c === "declined" ? "Išsaugojimas atšauktas." : "Išsaugoti nepavyko (" + (c || "klaida") + ").", c !== "declined");
+    }
+    return;
+  }
+  /* 3. atskira kopija naršyklėje */
+  if(!window.claude){
+    const u = URL.createObjectURL(blob);
+    const l = document.createElement("a");
+    l.href = u; l.download = name; document.body.appendChild(l); l.click(); l.remove();
+    setTimeout(()=>URL.revokeObjectURL(u), 5000);
+    spZinute("PDF atsisiųstas. Įkelk jį į SharePoint objekto aplanką.");
+    return;
+  }
+  spZinute("Šiame įrenginyje siųsti nepavyksta. Spausk „Spausdinti“ ir išsaugok PDF.", true);
+});
+
+/* ---------- debesis ---------- */
+function syncBusena(txt, on){
+  const el = $("sync-msg"); el.innerHTML = "";
+  const d = document.createElement("span"); d.className = "dot" + (on?" on":"");
+  el.append(d, document.createTextNode(txt));
+}
+async function sinchronizuoti(tylus){
+  if(!db) return;
+  const btn = $("btn-sync");
+  btn.disabled = true; syncBusena("\u012ekeliama\u2026", true);
+  try{
+    const a = auditSant();
+    await db.doc("auditai/" + S.id).set({
+      id:S.id, tipas:S.tipas, objektas:S.objektas, adresas:S.adresas, data:S.data,
+      inspektorius:S.inspektorius, n:S.n, ac:S.ac, re:S.re,
+      evq:a.evqPct, evqKl:a.evqKl, elemPct:a.elemPct,
+      atit:a.atit, neat:a.neat, priimtina:a.priimtina,
+      grupes:grupiuKokybe(), klDist:klPasiskirstymas(),
+      tv:S.tv, tekstas:tekstas(), atnaujinta:new Date().toISOString()
+    });
+    let ok=0, klaidos=0;
+    for(const t of S.tv){
+      for(const f of t.foto){
+        try{
+          const u = await fotoSkaityk(f.id);
+          if(!u) continue;
+          await db.collection("auditai/"+S.id+"/foto").doc(f.id).set({
+            tv: tvVardas(t, S.tv.indexOf(t)), elementas: f.key ? f.key.split("|")[1] : "bendra",
+            laikas: f.laikas, dataUrl: u
+          });
+          ok++;
+        }catch(e){ klaidos++; }
+      }
+    }
+    syncBusena("\u012ekelta " + hhmm(new Date().toISOString()) + " \u00b7 " + ok + " nuotr." +
+      (klaidos ? " (" + klaidos + " nepavyko)" : "") + ". Akt\u0105 galima surinkti kompiuteryje.", true);
+  }catch(e){
+    const c = e && e.code;
+    syncBusena(c==="not_granted"||c==="capability_disabled"
+      ? "Debesis \u0161iame \u012frenginyje neveikia. Duomenys lieka telefone \u2014 naudok \u201eKopijuoti\u201c."
+      : "Nepavyko \u012fkelti (" + (c||"klaida") + "). Duomenys lieka telefone.", false);
+    if(tylus) console.warn(e);
+  }
+  btn.disabled = false;
+}
+$("btn-sync").addEventListener("click", ()=>sinchronizuoti(false));
+
+/* ---------- prisijungimas ---------- */
+function prisijunges(){ try{ return JSON.parse(localStorage.getItem(KEY_LOGIN)||"null"); }catch(e){ return null; } }
+function issaugokPrisijungima(vardas){
+  try{ localStorage.setItem(KEY_LOGIN, JSON.stringify({vardas:vardas, laikas:new Date().toISOString()})); }catch(e){}
+}
+function zinomiVardai(){ try{ return JSON.parse(localStorage.getItem(KEY_VARDAI)||"[]"); }catch(e){ return []; } }
+function prisiminkVarda(vardas){
+  try{
+    const s = zinomiVardai().filter(v=>v!==vardas);
+    s.unshift(vardas);
+    localStorage.setItem(KEY_VARDAI, JSON.stringify(s.slice(0,8)));
+  }catch(e){}
+}
+function piesLogin(){
+  const zinomi = zinomiVardai();
+  $("f-vardai-wrap").hidden = !zinomi.length;
+  const el = $("seg-vardai"); el.innerHTML = "";
+  zinomi.forEach(v=>{
+    const b = document.createElement("button");
+    b.type = "button"; b.textContent = v;
+    b.addEventListener("click", ()=>{ $("f-login-vardas").value = v; $("f-login-kodas").focus(); });
+    el.appendChild(b);
+  });
+  $("f-login-vardas").value = isimintasInsp();
+  $("f-login-kodas").value = "";
+  $("hint-login").className = "hint";
+  $("hint-login").textContent = "Kod\u0105 duoda Jovita.";
+}
+$("btn-login").addEventListener("click", ()=>{
+  const vardas = $("f-login-vardas").value.trim();
+  const kodas = $("f-login-kodas").value.trim();
+  if(!vardas){
+    $("hint-login").className = "hint warn";
+    $("hint-login").textContent = "\u012era\u0161yk savo vard\u0105 ir pavard\u0119.";
+    $("f-login-vardas").focus(); return;
+  }
+  if(kodas !== PRIEIGOS_KODAS){
+    $("hint-login").className = "hint warn";
+    $("hint-login").textContent = "Neteisingas kodas. Klausk Jovitos.";
+    $("f-login-kodas").focus(); $("f-login-kodas").select(); return;
+  }
+  issaugokPrisijungima(vardas);
+  prisiminkVarda(vardas);
+  try{ localStorage.setItem(KEY_INSP, vardas); }catch(e){}
+  paleisti();
+});
+$("btn-logout").addEventListener("click", ()=>{
+  if(!confirm("Atsijungti? Kit\u0105 kart\u0105 reik\u0117s v\u0117l \u012fvesti kod\u0105.")) return;
+  try{ localStorage.removeItem(KEY_LOGIN); }catch(e){}
+  ["scr-setup","scr-tv","scr-sum"].forEach(id=>{ $(id).hidden = true; });
+  $("nav").hidden = true; $("topmeta").hidden = true;
+  $("btn-setup").hidden = true; $("btn-logout").hidden = true;
+  $("scr-login").hidden = false;
+  piesLogin();
+});
+
+/* ---------- startas ---------- */
+function paleisti(){
+  $("scr-login").hidden = true;
+  const isl = skaityti();
+  S = isl || naujas();
+  S.tv = (S.tv||[]).map(t=>Object.assign({tipas:S.tipas, klReik:S.klReik, foto:[]}, t));
+  S.tv.forEach(t=>{ t.ivert = t.ivert || {}; t.detales = t.detales || {}; isvalykIvert(t); });
+  saugoti();
+  piesSetup();
+  if(isl && isl.tv && isl.tv.length){
+    const done = S.tv.filter(t=>t.pav || t.uzpildyta).length;
+    const h = $("resume-hint");
+    h.hidden = false;
+    h.textContent = "Rasta prad\u0117ta patikra: " + (S.adresas||S.objektas) + " \u00b7 " + done + " i\u0161 " + S.n + " TV.";
+    if(S.baigta) rodyk("scr-sum"); else { cur = 0; rodyk("scr-tv"); }
+  } else {
+    rodyk("scr-setup");
+  }
+  syncBusena("Duomenys saugomi telefone.", false);
+  if(window.claude && typeof window.claude.use === "function"){
+    window.claude.use("downloads").then(x=>{ dl = x; }).catch(()=>{});
+    window.claude.use("db").then(x=>{
+      db = x;
+      if(db){
+        $("btn-sync").hidden = false;
+        syncBusena(ekranas==="scr-sum" ? "Paruo\u0161ta \u012fkelti \u012f debes\u012f."
+          : "Saugoma telefone; baigus bus \u012fkelta \u012f debes\u012f.", true);
+      }
+    }).catch(()=>{});
+  }
+}
+(function init(){
+  const jau = prisijunges();
+  if(jau){ paleisti(); } else { piesLogin(); }
+})();
+</script>
+
+<script>
+if("serviceWorker" in navigator){
+  addEventListener("load", function(){ navigator.serviceWorker.register("sw.js").catch(function(){}); });
+}
+</script>
+</body>
+</html>
