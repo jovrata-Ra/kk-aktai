@@ -388,8 +388,8 @@ input:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px soli
       <div class="field" style="margin-top:14px">
         <label>Vizualin&#279;s patikros laikas</label>
         <div class="seg wide" id="seg-laikas">
-          <button type="button" data-v="pries" aria-pressed="true">Prie&#353; naudojim&#261;</button>
-          <button type="button" data-v="po" aria-pressed="false">Naudojimo metu</button>
+          <button type="button" data-v="po" aria-pressed="true">Naudojimo metu</button>
+          <button type="button" data-v="pries" aria-pressed="false">Prie&#353; naudojim&#261;</button>
         </div>
       </div>
     </div>
@@ -662,7 +662,7 @@ function naujas(){
     pradeta:null, tv:[], baigta:false };
 }
 function tuscias(){
-  return { aukstas:"", pav:"", tipas:S.tipas, klReik:S.klReik, laikas:"pries",
+  return { aukstas:"", pav:"", tipas:S.tipas, klReik:S.klReik, laikas:"po",
            ivert:{}, detales:{}, foto:[], koment:"", uzpildyta:null };
 }
 function tvVardas(t,i){
