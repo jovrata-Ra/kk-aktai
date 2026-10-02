@@ -653,6 +653,10 @@ function siandien(){
   return new Date(d.getTime() - d.getTimezoneOffset()*60000).toISOString().slice(0,10);
 }
 const hhmm = iso => new Date(iso).toLocaleTimeString("lt-LT",{hour:"2-digit",minute:"2-digit"});
+/* nuotraukos parašas: laikas tik tada, kai jis žinomas (pvz., perkeltose iš Serfy jo nėra) */
+const suLaiku = (tekstas, iso) => iso ? tekstas + ", " + hhmm(iso) : tekstas;
+/* patikros laikas aktui: nuo pradžios iki pabaigos, kai žinoma */
+const patikrosLaikas = () => S.pradeta ? hhmm(S.pradeta) + (S.baigtaKada ? "–" + hhmm(S.baigtaKada) : "") : "";
 function isimintasInsp(){ try{ return localStorage.getItem(KEY_INSP)||""; }catch(e){ return ""; } }
 
 function naujas(){
@@ -997,7 +1001,7 @@ $("btn-prev").addEventListener("click", ()=>{
 $("btn-next").addEventListener("click", ()=>{
   if(ekranas==="scr-sum") return;
   if(cur < S.n-1){ cur++; piesTV(); window.scrollTo(0,0); }
-  else { S.baigta = true; saugoti(); rodyk("scr-sum"); if(db) sinchronizuoti(true); }
+  else { S.baigta = true; S.baigtaKada = new Date().toISOString(); saugoti(); rodyk("scr-sum"); if(db) sinchronizuoti(true); }
 });
 
 /* ---------- suvestin\u0117 ---------- */
@@ -1111,6 +1115,7 @@ function tekstas(){
   eil(["U\u017esakovas / objektas", S.objektas]);
   eil(["Adresas", S.adresas]);
   eil(["Audito data", S.data]);
+  if(patikrosLaikas()) eil(["Patikros laikas", patikrosLaikas()]);
   eil(["Inspektorius", S.inspektorius]);
   eil(["Imties dydis (n)", S.n]);
   eil(["Taikomas AQL", "6,5 %"]);
@@ -1212,6 +1217,7 @@ async function piesSpaudai(){
   eil("U\u017esakovas / objektas", S.objektas);
   eil("Adresas", S.adresas);
   eil("Audito data", S.data);
+  if(patikrosLaikas()) eil("Patikros laikas", patikrosLaikas());
   eil("Inspektorius", S.inspektorius);
   eil("Imties dydis (n)", S.n);
   eil("Taikomas AQL", "6,5 %");
@@ -1277,7 +1283,7 @@ async function piesSpaudai(){
         d.push("<li>" + esc(k.split("|")[0]) + " &mdash; " + esc(k.split("|")[1]) +
                (t.detales[k] ? ": " + esc(t.detales[k]) : "") + "</li>");
         fotoK.forEach(f => { if(nuotr.has(f.id)) d.push('<div class="fotos"><figure><img src="' +
-          nuotr.get(f.id) + '"><figcaption>' + esc(k.split("|")[1]) + ", " + hhmm(f.laikas) +
+          nuotr.get(f.id) + '"><figcaption>' + esc(suLaiku(k.split("|")[1], f.laikas)) +
           "</figcaption></figure></div>"); });
       });
       d.push("</ul>");
@@ -1286,7 +1292,7 @@ async function piesSpaudai(){
     if(bendros.length){
       d.push('<div class="fotos">');
       bendros.forEach(f => { if(nuotr.has(f.id)) d.push('<figure><img src="' + nuotr.get(f.id) +
-        '"><figcaption>bendra nuotrauka, ' + hhmm(f.laikas) + "</figcaption></figure>"); });
+        '"><figcaption>' + suLaiku("bendra nuotrauka", f.laikas) + "</figcaption></figure>"); });
       d.push("</div>");
     }
     d.push("</div>");
@@ -1425,6 +1431,7 @@ async function kurkPdf(){
     ["Užsakovas / objektas", S.objektas],
     ["Adresas", S.adresas],
     ["Audito data", S.data],
+    ...(patikrosLaikas() ? [["Patikros laikas", patikrosLaikas()]] : []),
     ["Inspektorius", S.inspektorius],
     ["Imties dydis (n)", S.n],
     ["Taikomas AQL", "6,5 %"],
@@ -1538,10 +1545,10 @@ async function kurkPdf(){
       blogi(t).forEach(k => {
         const [g, el] = k.split("|");
         rasyk("• " + g + " – " + el + (t.detales[k] ? ": " + t.detales[k] : ""), 8.5, false, M + 3);
-        fotos(t.foto.filter(f => f.key === k), f => el + ", " + hhmm(f.laikas));
+        fotos(t.foto.filter(f => f.key === k), f => suLaiku(el, f.laikas));
       });
       if(t.koment) rasyk("Komentaras: " + t.koment, 8.5, false, M + 3);
-      fotos(t.foto.filter(f => !f.key), f => "bendra nuotrauka, " + hhmm(f.laikas));
+      fotos(t.foto.filter(f => !f.key), f => suLaiku("bendra nuotrauka", f.laikas));
       y += 2; doc.setDrawColor(170); doc.setLineWidth(0.15); doc.setLineDashPattern([0.6, 0.8], 0);
       doc.line(M, y, PW - M, y); doc.setLineDashPattern([], 0);
     });

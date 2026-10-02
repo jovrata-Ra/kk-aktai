@@ -1,5 +1,5 @@
 /* KK aktai: darbas be interneto. Versija keičiasi su kiekvienu atnaujinimu. */
-const V = "kk-aktai-0fb525fa4b";
+const V = "kk-aktai-5d4ca6a945";
 const PRADZIA = ["./", "manifest.webmanifest", "icon-192.png", "apple-touch-icon.png"];
 const CDN = [
   "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js",
