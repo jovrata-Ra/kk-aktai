@@ -836,6 +836,7 @@ $("btn-setup").addEventListener("click", ()=>{ piesSetup(); rodyk("scr-setup"); 
 function zymek(){ const t=S.tv[cur]; if(!t.uzpildyta) t.uzpildyta = new Date().toISOString(); }
 
 function piesTV(){
+  while(S.tv.length <= cur) S.tv.push(tuscias());
   const t = S.tv[cur];
   $("tv-count").textContent = "TV " + (cur+1) + " i\u0161 " + S.n;
 
@@ -1751,6 +1752,8 @@ function paleisti(){
   S = isl || naujas();
   S.tv = (S.tv||[]).map(t=>Object.assign({tipas:S.tipas, klReik:S.klReik, foto:[]}, t));
   S.tv.forEach(t=>{ t.ivert = t.ivert || {}; t.detales = t.detales || {}; isvalykIvert(t); });
+  /* imtis galėjo būti padidinta nustatymuose be „Tęsti patikrą“ — papildom trūkstamus TV */
+  if(S.tv.length) while(S.tv.length < S.n) S.tv.push(tuscias());
   saugoti();
   piesSetup();
   if(isl && isl.tv && isl.tv.length){
